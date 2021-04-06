@@ -2,6 +2,7 @@ import React from "react";
 import { Switch, Route } from "react-router-dom";
 import NavBar from "./NavBar";
 import TransportationForm from "./TransportationForm"
+import Search from "./Search"
 import "./App.css";
 
 function App() {
@@ -15,6 +16,9 @@ function App() {
       <Switch>
         <Route exact path="/transportationform">
           <TransportationForm />
+        </Route>
+        <Route exact path="/search">
+          <Search />
         </Route>
       </Switch>
 
