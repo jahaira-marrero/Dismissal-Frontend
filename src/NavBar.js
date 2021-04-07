@@ -14,6 +14,9 @@ const NavBar = () => {
             <NavLink to="/search">
                 <button>Search Student</button>
             </NavLink>
+            <NavLink to="/studentscontainer">
+                <button>All Students</button>
+            </NavLink>
         </div>
     )
 }
