@@ -4,10 +4,12 @@ import NavBar from "./NavBar";
 import TransportationForm from "./TransportationForm"
 import Search from "./Search"
 import StudentsContainer from "./StudentsContainer"
+import TransportationContainer from "./TransportationContainer"
 import "./App.css";
 
 function App() {
   const [students, setStudents] = useState([])
+  const [transportations, setTransportations] = useState([])
 
   useEffect(() => {
     fetch("http://localhost:3000/students")
@@ -17,6 +19,14 @@ function App() {
     })
 },[]);
 
+  useEffect(() => {
+    fetch("http://localhost:3000/transportations")
+     .then(r => r.json())
+     .then(transportationsArray => {
+        setTransportations(transportationsArray)
+  })
+},[]);
+
 
   return (
     <div className="App">
@@ -24,6 +34,7 @@ function App() {
       <h1> Dismissal Made Easy</h1>
       <NavBar />
       <StudentsContainer students={students} />
+      <TransportationContainer transportations={transportations} />
       </header>
       <Switch>
         <Route exact path="/transportationform">
