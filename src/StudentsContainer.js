@@ -11,7 +11,9 @@ function StudentsContainer({students}) {
             name={student.name}
             address={student.address}
             guardian={student.guardian}
-        />
+            phone={student.phone}
+            transportation={student.transportation.name}
+            />
         )
     })
  
