@@ -1,12 +1,12 @@
 import React from "react";
 import DismissalChanges from "./DismissalChanges"
 
-function ChangesContainer({changes}) {
+function DismissalChangesContainer({changes}) {
 
     const dismissalChanges = changes.map((change) => {
         return (
             <DismissalChanges
-            key={change.key}
+            key={change.id}
             date={change.date}
             student={change.student.name}
             transportation={change.transportation.name}
@@ -23,4 +23,4 @@ function ChangesContainer({changes}) {
     )
 }
 
-export default ChangesContainer
+export default DismissalChangesContainer;

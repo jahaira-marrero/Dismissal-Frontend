@@ -4,7 +4,7 @@ import StudentCards from "./StudentCards";
 function StudentsContainer({students}) {
     
     const studentCards = students.map((student) => {
-        
+
         return (
             <StudentCards
             key={student.id}
@@ -13,6 +13,7 @@ function StudentsContainer({students}) {
             guardian={student.guardian}
             phone={student.phone}
             transportation={student.transportation.name}
+            modifications={student.modifications}
             />
         )
     })

@@ -1,11 +1,11 @@
 import React, {useEffect, useState} from "react";
 import { Switch, Route } from "react-router-dom";
 import NavBar from "./NavBar";
-import TransportationForm from "./TransportationForm"
+import DismissalChangeForm from "./DismissalChangeForm"
 import Search from "./Search"
 import StudentsContainer from "./StudentsContainer"
 import TransportationContainer from "./TransportationContainer"
-import ChangesContainer from "./ChangesContainer"
+import DismissalChangesContainer from "./DismissalChangesContainer"
 import "./App.css";
 
 function App() {
@@ -30,25 +30,31 @@ function App() {
 },[]);
 
 useEffect(() => {
-  fetch("http://localhost:3000/changes")
+  fetch("http://localhost:3000/modifications")
    .then(r => r.json())
    .then(changesArray => {
       setChanges(changesArray)
 })
 },[]);
 
+function handleAddDismissalChange(newDismissalChange) {
+  const newDismissalChanges = [...changes, newDismissalChange];
+  setChanges(newDismissalChanges)
+}
+
   return (
     <div className="App">
       <header className="App-header">
       <h1> Dismissal Made Easy</h1>
       <NavBar />
-      <ChangesContainer changes={changes} />
+      <DismissalChangesContainer changes={changes} />
+      <DismissalChangeForm addDismissalChange={handleAddDismissalChange}/>
       <StudentsContainer students={students} />
       <TransportationContainer transportations={transportations} />
       </header>
       <Switch>
-        <Route exact path="/transportationform">
-          <TransportationForm />
+        <Route exact path="/dismissalchangesform">
+          <DismissalChangeForm />
         </Route>
         <Route exact path="/search">
           <Search />
