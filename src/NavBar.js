@@ -8,13 +8,16 @@ const NavBar = () => {
             <NavLink to="/">
                 <button>Home Page</button>
             </NavLink>
-            <NavLink to="/dismissalchangesform">
+            <NavLink to="/dismissalchanges">
+                <button >Dismissal Changes</button>
+            </NavLink>
+            <NavLink to="/dismissalchangeform">
                 <button >Request Change</button>
             </NavLink>
             <NavLink to="/search">
                 <button>Search Student</button>
             </NavLink>
-            <NavLink to="/studentscontainer">
+            <NavLink to="/studentscards">
                 <button>All Students</button>
             </NavLink>
         </div>

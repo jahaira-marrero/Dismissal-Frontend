@@ -1,7 +1,10 @@
-import React from "react";
+import React, {useState} from "react";
 import StudentDismissalDetails from "./StudentDismissalDetails"
 
 function StudentCards({name, address, guardian, phone, transportation, modifications}) {
+    const [showDetails, setShowDetails] = useState(false)
+
+  
 
     const dismissalModification = modifications.map((modification) => {
         
@@ -15,6 +18,10 @@ function StudentCards({name, address, guardian, phone, transportation, modificat
         )
         })
 
+        function handleClick() {
+            setShowDetails(!showDetails)
+        }
+
     return (
         <div>
             <h2>Student Information Card</h2>
@@ -23,7 +30,9 @@ function StudentCards({name, address, guardian, phone, transportation, modificat
             <p>Guardian:</p> {guardian}
             <p>Phone:</p> {phone}
             <p>Transportation: </p> {transportation}
-            {dismissalModification}
+            
+            <button onClick={handleClick}> See Prior Changes</button>
+            {showDetails ?  <p>{dismissalModification}</p> : null}
         </div>
     )
 }

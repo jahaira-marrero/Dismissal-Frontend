@@ -1,7 +1,8 @@
 import React from "react";
 
 function StudentDismissalDetails({date, transName, transUser}) {
-
+console.log(transName)
+console.log(transUser)
         return (
        
         <div>
