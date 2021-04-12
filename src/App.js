@@ -5,6 +5,7 @@ import DismissalChangeForm from "./DismissalChangeForm"
 import StudentsContainer from "./StudentsContainer";
 import TransportationContainer from "./TransportationContainer";
 import DismissalChangesContainer from "./DismissalChangesContainer";
+// import Search from "./Search";
 // import StudentCards from "./StudentCards";
 // import DismissalChanges from "./DismissalChanges";
 import StudentUpdateForm from "./StudentUpdateForm"
@@ -49,7 +50,6 @@ function handleStudentUpdateForm(updatedStudentInfo) {
   const updatedStudentProfile = students.filter((student) => student.id !== updatedStudentInfo.id)
   const answer = [...updatedStudentProfile, updatedStudentInfo]
   setStudents(answer)
-
 }
 
 const filteredStudents = students.filter(student => {
@@ -62,7 +62,6 @@ function handleDeleteDismissalChange(id) {
     setModifications(deleteDismissalChange)
 }
 
-
 function handleSearch(newSearch) {
   setSearch(newSearch);
 }
@@ -71,23 +70,21 @@ function handleSearch(newSearch) {
     <div className="App">
       <header className="App-header">
       <h1> Dismissal Made Easy</h1>
-      <NavBar handleSearch={handleSearch}/>
+      <NavBar handleSearch={handleSearch} />
       <DismissalChangesContainer modifications={modifications} handleDeleteDismissalChange={handleDeleteDismissalChange}/>
-    
       </header>
       <Switch>
-  
         <Route exact path="/dismissalchangeform">
-        <DismissalChangeForm addDismissalChange={handleAddDismissalChange} students={students}/>
-          </Route>
+          <DismissalChangeForm addDismissalChange={handleAddDismissalChange} students={students}/>
+        </Route>
         <Route exact path="/studentcards">
-        <StudentsContainer students={students} filteredStudents={filteredStudents}/>
+          <StudentsContainer students={students} filteredStudents={filteredStudents} />
         </Route>
         <Route exact path="/transportations">
-        <TransportationContainer transportations={transportations} />
+          <TransportationContainer transportations={transportations} />
         </Route>
         <Route exact path="/studentupdateform">
-        <StudentUpdateForm handleStudentUpdateForm={handleStudentUpdateForm} students={students} transportations={transportations}/>
+          <StudentUpdateForm handleStudentUpdateForm={handleStudentUpdateForm} students={students} transportations={transportations}/>
         </Route>
       </Switch>
     </div>

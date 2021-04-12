@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
-function Search( {handleSearch}) {
+
+function Search({handleSearch}) {
   const [currentSearch, setCurrentSearch] = useState("")
   
   function handleSubmit(e) {
@@ -19,7 +20,7 @@ function Search( {handleSearch}) {
       />
       <button type="submit">🔍</button>
     </form>
-  );
+  )
 }
 
 export default Search;

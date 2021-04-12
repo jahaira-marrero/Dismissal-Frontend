@@ -3,7 +3,6 @@ import StudentCards from "./StudentCards";
 
 function StudentsContainer({filteredStudents}) {
     
-  
     const studentCards = filteredStudents.map((student) => {
 
         return (
@@ -22,7 +21,6 @@ function StudentsContainer({filteredStudents}) {
     return (
         <div> 
             <h2>Student Container</h2>
-            <button>Edit Student Profile</button>
               {studentCards}
         </div>
       
