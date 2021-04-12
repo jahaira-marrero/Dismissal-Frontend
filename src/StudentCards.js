@@ -12,8 +12,8 @@ function StudentCards({name, address, guardian, phone, transportation, modificat
             <StudentDismissalDetails  
             key={modification.id}
             date={modification.date}
-            transUser={modification.user}
-            transName={modification.transportation}
+            transUser={modification.user.name}
+            transName={modification.transportation.name}
             />
         )
         })

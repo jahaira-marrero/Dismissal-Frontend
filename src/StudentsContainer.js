@@ -1,10 +1,10 @@
 import React from "react";
 import StudentCards from "./StudentCards";
 
-function StudentsContainer({students}) {
+function StudentsContainer({filteredStudents}) {
     
   
-    const studentCards = students.map((student) => {
+    const studentCards = filteredStudents.map((student) => {
 
         return (
             <StudentCards

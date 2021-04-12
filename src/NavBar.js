@@ -1,7 +1,9 @@
 import React from "react";
+import Search from "./Search";
 import { NavLink } from "react-router-dom";
 
-const NavBar = () => {
+function NavBar({handleSearch}) {
+
 
     return (
         <div className="NavBar">
@@ -20,6 +22,7 @@ const NavBar = () => {
             <NavLink to="/studentscards">
                 <button>All Students</button>
             </NavLink>
+            <Search handleSearch={handleSearch}/>
         </div>
     )
 }
