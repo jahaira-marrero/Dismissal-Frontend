@@ -17,7 +17,7 @@ function StudentUpdateForm({handleStudentUpdateForm, transportations, students})
     <option key={transportation.id} value={transportation.id}>{transportation.name}</option>
 )})
 
-function handleStudentUpdate(id, e) {
+function handleStudentUpdate(e) {
     e.preventDefault()
     fetch(`http://localhost:3000/students/${id}`, {
         method: "PATCH",

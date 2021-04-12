@@ -16,7 +16,7 @@ useEffect(() => {
 
 const id = 1
 
-const studentOptions = students.map((student) => { return (
+const studentOptions = students?.map((student) => { return (
     <option key={student.id} value={student.id}>{student.name}</option>
 )})
 

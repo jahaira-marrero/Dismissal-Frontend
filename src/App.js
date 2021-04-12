@@ -5,8 +5,8 @@ import DismissalChangeForm from "./DismissalChangeForm"
 import StudentsContainer from "./StudentsContainer";
 import TransportationContainer from "./TransportationContainer";
 import DismissalChangesContainer from "./DismissalChangesContainer";
-import StudentCards from "./StudentCards";
-import DismissalChanges from "./DismissalChanges";
+// import StudentCards from "./StudentCards";
+// import DismissalChanges from "./DismissalChanges";
 import StudentUpdateForm from "./StudentUpdateForm"
 import "./App.css";
 
@@ -45,7 +45,7 @@ function handleAddDismissalChange(newDismissalChange) {
   setModifications(newDismissalChanges)
 }
 
-function handleStudentProfileUpdate(updatedStudentInfo) {
+function handleStudentUpdateForm(updatedStudentInfo) {
   const updatedStudentProfile = students.filter((student) => student.id !== updatedStudentInfo.id)
   const answer = [...updatedStudentProfile, updatedStudentInfo]
   setStudents(answer)
@@ -55,6 +55,12 @@ function handleStudentProfileUpdate(updatedStudentInfo) {
 const filteredStudents = students.filter(student => {
   return student.name.toString().toLowerCase().includes(search.toString().toLowerCase())
 });
+
+function handleDeleteDismissalChange(id) {
+  const deleteDismissalChange = modifications.filter(
+    (modification) => modification.id !== id);
+    setModifications(deleteDismissalChange)
+}
 
 
 function handleSearch(newSearch) {
@@ -66,22 +72,22 @@ function handleSearch(newSearch) {
       <header className="App-header">
       <h1> Dismissal Made Easy</h1>
       <NavBar handleSearch={handleSearch}/>
-      <DismissalChangesContainer modifications={modifications} />
-      <DismissalChangeForm addDismissalChange={handleAddDismissalChange} students={students}/>
-      <StudentsContainer students={students} filteredStudents={filteredStudents}/>
-      <StudentUpdateForm handleStudentProfileUpdate={handleStudentProfileUpdate} students={students} transportations={transportations}/>
-      <TransportationContainer transportations={transportations} />
-
+      <DismissalChangesContainer modifications={modifications} handleDeleteDismissalChange={handleDeleteDismissalChange}/>
+    
       </header>
       <Switch>
-      <Route exact path="/dismissalchanges">
-          <DismissalChanges />
-        </Route>
+  
         <Route exact path="/dismissalchangeform">
-          <DismissalChangeForm />
+        <DismissalChangeForm addDismissalChange={handleAddDismissalChange} students={students}/>
           </Route>
         <Route exact path="/studentcards">
-          <StudentCards />
+        <StudentsContainer students={students} filteredStudents={filteredStudents}/>
+        </Route>
+        <Route exact path="/transportations">
+        <TransportationContainer transportations={transportations} />
+        </Route>
+        <Route exact path="/studentupdateform">
+        <StudentUpdateForm handleStudentUpdateForm={handleStudentUpdateForm} students={students} transportations={transportations}/>
         </Route>
       </Switch>
     </div>

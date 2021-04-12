@@ -19,8 +19,14 @@ function NavBar({handleSearch}) {
             <NavLink to="/search">
                 <button>Search Student</button>
             </NavLink>
-            <NavLink to="/studentscards">
+            <NavLink to="/studentcards">
                 <button>All Students</button>
+            </NavLink>
+            <NavLink to="/transportations">
+                <button> Transportation</button>
+            <NavLink to="/studentupdateform">
+                <button> Update Student Information</button>
+            </NavLink>
             </NavLink>
             <Search handleSearch={handleSearch}/>
         </div>

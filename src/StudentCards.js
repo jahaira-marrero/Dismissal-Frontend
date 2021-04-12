@@ -38,16 +38,3 @@ function StudentCards({name, address, guardian, phone, transportation, modificat
 }
 
 export default StudentCards;
-
-// dismissalchanges.map((dismissal, index) => {
-//     return (
-//         <>
-//         Change #{index+1}
-//         <ul>
-//             <li>{dismissal.date}</li>
-//             <li>{dismissal.transport}</li>
-//             <li>{dismissal.user}</li>
-//         </ul>
-//         </>
-//     )
-// })
