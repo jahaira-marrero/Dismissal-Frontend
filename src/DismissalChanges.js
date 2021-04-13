@@ -7,6 +7,7 @@ function DismissalChanges({ student, modifications, handleDeleteDismissalChange}
         return (
             <Modifications
             key={modification.key}
+            id={modification.id}
             date={modification.date}
             user={modification.user.name}
             transport={modification.transportation.name}
@@ -17,15 +18,6 @@ function DismissalChanges({ student, modifications, handleDeleteDismissalChange}
 })
     
 
-    // function handleDelete(id) {
-    //     fetch(`http://localhost:3000/modifications/${id}`, {
-    //        method: "DELETE" 
-    //     })
-    //        .then(r => r.json())
-    //        .then(() =>{console.log((id))
-    //     });
-    //     handleDeleteDismissalChange(id)
-    // }
 
     return (
         <div> 
