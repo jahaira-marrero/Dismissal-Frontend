@@ -15,7 +15,7 @@ function Modifications({student,transport, user, date, id, handleDeleteDismissal
 
     return (
         <div>
-        <p> Name: {student}</p>
+        <h3>{student} Dismissal Change</h3>
         <p>Date: {date}</p>
         <p> Changed to: {transport}</p>
         <p> Submitted by: {user}</p>

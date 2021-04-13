@@ -30,13 +30,11 @@ function StudentCards({name, address, guardian, phone, transportation, modificat
 
     return (
         <div>
-            <h2>Student Information Card</h2>
-            
-            <p>Student Name:</p> {name}
-            <p>Home Address:</p> {address}
-            <p>Guardian:</p> {guardian}
-            <p>Phone:</p> {phone}
-            <p>Transportation: </p> {transportation}
+            <h2>{name} Information Card</h2>
+            <p>Home Address: {address}</p> 
+            <p>Guardian: {guardian}</p> 
+            <p>Phone: {phone}</p> 
+            <p>Transportation Type: {transportation}</p> 
             <button onClick={handleUpdateClick}>Update this Student</button>
             {showUpdateForm ? <StudentUpdateForm handleStudentUpdateForm={handleStudentUpdateForm} students={students} transportations={transForm} /> : null}
             <button onClick={handleClick}> See Prior Changes</button>
