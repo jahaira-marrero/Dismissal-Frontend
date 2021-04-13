@@ -49,7 +49,11 @@ function handleAddDismissalChange(newDismissalChange) {
 function handleStudentUpdateForm(updatedStudentInfo) {
   const updatedStudentProfile = students.filter((student) => student.id !== updatedStudentInfo.id)
   const answer = [...updatedStudentProfile, updatedStudentInfo]
+  const updatedTransportation = transportations.filter((transportation) => transportation.id !== updatedStudentInfo.transportation.id)
+  const transAnswer = [...updatedTransportation, updatedStudentInfo.transportation]
   setStudents(answer)
+  setTransportations(transAnswer)
+
 }
 
 const filteredStudents = students.filter(student => {
@@ -58,6 +62,7 @@ const filteredStudents = students.filter(student => {
 
 const filteredModifications = students.filter((student) => student.modifications.length >0)
 
+// const filteredTransportations = students.filter((student) => student.transportation.name)
 
 function handleDeleteDismissalChange(id) {
   const deleteDismissalChange = modifications.filter(

@@ -2,7 +2,9 @@ import React from "react";
 import DismissalChanges from "./DismissalChanges"
 
 function DismissalChangesContainer({filteredModifications, handleDeleteDismissalChange}) {
-
+ 
+    // .sort((a, b) =>  a.date.localCompare(b.date))
+    
     const dismissalChanges = filteredModifications.map((student) => {
       
         return (
