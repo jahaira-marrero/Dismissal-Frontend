@@ -56,6 +56,9 @@ const filteredStudents = students.filter(student => {
   return student.name.toString().toLowerCase().includes(search.toString().toLowerCase())
 });
 
+const filteredModifications = students.filter((student) => student.modifications.length >0)
+
+
 function handleDeleteDismissalChange(id) {
   const deleteDismissalChange = modifications.filter(
     (modification) => modification.id !== id);
@@ -71,7 +74,7 @@ function handleSearch(newSearch) {
       <header className="App-header">
       <h1> Dismissal Made Easy</h1>
       <NavBar handleSearch={handleSearch} />
-      <DismissalChangesContainer modifications={modifications} handleDeleteDismissalChange={handleDeleteDismissalChange}/>
+      <DismissalChangesContainer filteredModifications={filteredModifications} handleDeleteDismissalChange={handleDeleteDismissalChange}/>
       </header>
       <Switch>
         <Route exact path="/dismissalchangeform">

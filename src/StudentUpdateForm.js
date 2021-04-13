@@ -48,7 +48,8 @@ function handleStudentUpdate(e) {
                     name="student.id"
                     value={id}
                     onChange={(e) => setId(e.target.value)}
-                    >{studentObj}
+                    ><option value="0">Select a Student</option>
+                        {studentObj}
                     </select>
                     <label>Name: </label>
                     <input 
@@ -97,6 +98,7 @@ function handleStudentUpdate(e) {
                     value={transportation_id}
                     onChange={(e) => setTransportation_id(e.target.value)}
                     >
+                        <option value="0">Select a Transportation</option>
                         {transportationType}
                     </select>
                 <button type="submit">Update Information</button>

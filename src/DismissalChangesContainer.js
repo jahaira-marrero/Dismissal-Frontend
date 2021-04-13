@@ -1,18 +1,16 @@
 import React from "react";
 import DismissalChanges from "./DismissalChanges"
 
-function DismissalChangesContainer({modifications, handleDeleteDismissalChange}) {
+function DismissalChangesContainer({filteredModifications, handleDeleteDismissalChange}) {
 
-    const dismissalChanges = modifications.map((modification) => {
+    const dismissalChanges = filteredModifications.map((student) => {
       
         return (
             <DismissalChanges
-            key={modification.id}
-            id={modification.id}
-            date={modification.date}
-            student={modification.student.name}
-            transportation={modification.transportation.name}
-            user={modification.user.name} 
+            key={student.id}
+            id={student.id}
+            student={student.name}
+            modifications={student.modifications} 
             handleDeleteDismissalChange={handleDeleteDismissalChange}   
             />
         )
