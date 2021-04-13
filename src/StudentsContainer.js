@@ -1,7 +1,7 @@
 import React from "react";
 import StudentCards from "./StudentCards";
 
-function StudentsContainer({filteredStudents}) {
+function StudentsContainer({filteredStudents, handleStudentUpdateForm, students, transportations}) {
     
     const studentCards = filteredStudents.map((student) => {
 
@@ -14,6 +14,9 @@ function StudentsContainer({filteredStudents}) {
             phone={student.phone}
             transportation={student.transportation.name}
             modifications={student.modifications}
+            handleStudentUpdateForm={handleStudentUpdateForm} 
+            students={students} 
+            transForm={transportations}
             />
         )
     })

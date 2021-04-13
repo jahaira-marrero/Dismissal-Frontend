@@ -85,8 +85,8 @@ function handleSearch(newSearch) {
         <Route exact path="/dismissalchangeform">
           <DismissalChangeForm addDismissalChange={handleAddDismissalChange} students={students}/>
         </Route>
-        <Route exact path="/studentcards">
-          <StudentsContainer students={students} filteredStudents={filteredStudents} />
+        <Route exact path="/students">
+          <StudentsContainer students={students} filteredStudents={filteredStudents} handleStudentUpdateForm={handleStudentUpdateForm} transportations={transportations} />
         </Route>
         <Route exact path="/transportations">
           <TransportationContainer transportations={transportations} />
