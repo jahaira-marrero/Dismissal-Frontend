@@ -8,7 +8,9 @@ import DismissalChangesContainer from "./DismissalChangesContainer";
 // import Search from "./Search";
 // import StudentCards from "./StudentCards";
 // import DismissalChanges from "./DismissalChanges";
-import StudentUpdateForm from "./StudentUpdateForm"
+import StudentUpdateForm from "./StudentUpdateForm";
+import Login from "./Login";
+import MyProfile from "./MyProfile";
 import "./App.css";
 
 function App() {
@@ -16,6 +18,8 @@ function App() {
   const [transportations, setTransportations] = useState([])
   const [modifications, setModifications] = useState([])
   const [search, setSearch] = useState([])
+  const [signedIn, setSignedIn] = useState(false)
+  const [currentUser, setCurrentUser] = useState({})
 
   useEffect(() => {
     fetch("http://localhost:3000/students")
@@ -40,6 +44,11 @@ useEffect(() => {
       setModifications(changesArray)
 })
 },[]);
+
+function changeLogin(userInfo) {
+  setSignedIn(!signedIn)
+  setCurrentUser(userInfo)
+}
 
 function handleAddDismissalChange(newDismissalChange) {
   const newDismissalChanges = [...modifications, newDismissalChange];
@@ -78,15 +87,14 @@ function handleSearch(newSearch) {
     <div className="App">
       <header className="App-header">
       <h1> Dismissal Made Easy</h1>
-      <NavBar handleSearch={handleSearch} />
-      
+      <NavBar handleSearch={handleSearch} signedIn={signedIn} changeLogin={changeLogin}/>
       </header>
       <Route exact path="/dismissalchangeform">
-          <DismissalChangeForm addDismissalChange={handleAddDismissalChange} students={students}/>
+          <DismissalChangeForm currentUser={currentUser} addDismissalChange={handleAddDismissalChange} students={students}/>
       </Route>
       <DismissalChangesContainer filteredModifications={filteredModifications} handleDeleteDismissalChange={handleDeleteDismissalChange} />
+      
       <Switch>
-        
         <Route exact path="/studentupdateform">
           <StudentUpdateForm handleStudentUpdateForm={handleStudentUpdateForm} students={students} transportations={transportations}/>
         </Route>
@@ -96,7 +104,12 @@ function handleSearch(newSearch) {
         <Route exact path="/transportations">
           <TransportationContainer transportations={transportations} />
         </Route>
-        
+        <Route exact path="/login">
+          <Login changeLogin={changeLogin} />
+        </Route>
+        <Route exact path="/myprofile">
+          <MyProfile user={currentUser} setCurrentUser={setCurrentUser} />
+        </Route>
       </Switch>
     </div>
   );

@@ -8,6 +8,9 @@ function NavBar({handleSearch}) {
 
     return (
         <div className="NavBar">
+            <NavLink to="/login">
+                <Button size="sm">Login</Button>
+            </NavLink>
             <NavLink to="/">
                 <Button size="sm">Home Page</Button>
             </NavLink>
