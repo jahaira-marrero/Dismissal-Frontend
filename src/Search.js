@@ -10,8 +10,9 @@ function Search({handleSearch}) {
   }
 
   return (
-    <form className="searchbar" onSubmit={handleSubmit}>
+    <form  onSubmit={handleSubmit}>
       <input
+       className="Search-bar"
         type="text"
         id="search"
         placeholder="search student"

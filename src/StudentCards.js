@@ -1,7 +1,8 @@
 import React, {useState} from "react";
 // import {useHistory} from "react-router-dom";
-import StudentDismissalDetails from "./StudentDismissalDetails"
-import StudentUpdateForm from "./StudentUpdateForm"
+import StudentDismissalDetails from "./StudentDismissalDetails";
+import StudentUpdateForm from "./StudentUpdateForm";
+import Button from 'react-bootstrap/Button';
 
 function StudentCards({name, address, guardian, phone, transportation, modifications, handleStudentUpdateForm, students, transForm}) {
     const [showDetails, setShowDetails] = useState(false)
@@ -35,9 +36,9 @@ function StudentCards({name, address, guardian, phone, transportation, modificat
             <p>Guardian: {guardian}</p> 
             <p>Phone: {phone}</p> 
             <p>Transportation Type: {transportation}</p> 
-            <button onClick={handleUpdateClick}>Update this Student</button>
+            <Button size="sm" onClick={handleUpdateClick}>Update this Student</Button>
             {showUpdateForm ? <StudentUpdateForm handleStudentUpdateForm={handleStudentUpdateForm} students={students} transportations={transForm} /> : null}
-            <button onClick={handleClick}> See Prior Changes</button>
+            <Button size="sm" onClick={handleClick}> See Prior Changes</Button>
             {showDetails ?  <p>{dismissalModification}</p> : null}
         </div>
     )

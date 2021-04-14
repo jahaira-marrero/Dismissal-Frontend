@@ -79,11 +79,16 @@ function handleSearch(newSearch) {
       <header className="App-header">
       <h1> Dismissal Made Easy</h1>
       <NavBar handleSearch={handleSearch} />
-      <DismissalChangesContainer filteredModifications={filteredModifications} handleDeleteDismissalChange={handleDeleteDismissalChange}/>
+      
       </header>
-      <Switch>
-        <Route exact path="/dismissalchangeform">
+      <Route exact path="/dismissalchangeform">
           <DismissalChangeForm addDismissalChange={handleAddDismissalChange} students={students}/>
+      </Route>
+      <DismissalChangesContainer filteredModifications={filteredModifications} handleDeleteDismissalChange={handleDeleteDismissalChange} />
+      <Switch>
+        
+        <Route exact path="/studentupdateform">
+          <StudentUpdateForm handleStudentUpdateForm={handleStudentUpdateForm} students={students} transportations={transportations}/>
         </Route>
         <Route exact path="/students">
           <StudentsContainer students={students} filteredStudents={filteredStudents} handleStudentUpdateForm={handleStudentUpdateForm} transportations={transportations} />
@@ -91,9 +96,7 @@ function handleSearch(newSearch) {
         <Route exact path="/transportations">
           <TransportationContainer transportations={transportations} />
         </Route>
-        <Route exact path="/studentupdateform">
-          <StudentUpdateForm handleStudentUpdateForm={handleStudentUpdateForm} students={students} transportations={transportations}/>
-        </Route>
+        
       </Switch>
     </div>
   );

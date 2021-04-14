@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import Button from 'react-bootstrap/Button';
 
 function StudentUpdateForm({handleStudentUpdateForm, transportations, students}) {
     const [id, setId] = useState([])
@@ -8,6 +9,7 @@ function StudentUpdateForm({handleStudentUpdateForm, transportations, students})
     const [homeroom, setHomeroom] = useState("0")
     const [phone, setPhone] = useState("0001234567")
     const [transportation_id, setTransportation_id] = useState("")
+    
 
     const studentObj = students.map((student) => { return (
         <option key={student.id} value={student.id}>{student.name}</option>
@@ -101,7 +103,7 @@ function handleStudentUpdate(e) {
                         <option value="0">Select a Transportation</option>
                         {transportationType}
                     </select>
-                <button type="submit">Update Information</button>
+                <Button size="sm" type="submit">Update Information</Button>
             </form>
         </section>
         </div>

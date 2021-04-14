@@ -1,6 +1,7 @@
 import React from "react";
 import Search from "./Search";
 import { NavLink } from "react-router-dom";
+import Button from 'react-bootstrap/Button';
 
 function NavBar({handleSearch}) {
 
@@ -8,24 +9,24 @@ function NavBar({handleSearch}) {
     return (
         <div className="NavBar">
             <NavLink to="/">
-                <button>Home Page</button>
+                <Button size="sm">Home Page</Button>
             </NavLink>
             <NavLink to="/dismissalchanges">
-                <button >Dismissal Changes</button>
+                <Button size="sm">Dismissal Changes</Button>
             </NavLink>
             <NavLink to="/dismissalchangeform">
-                <button >Request Change</button>
+                <Button size="sm">Request Change</Button>
             </NavLink>
             <NavLink to="/students">
-                <button>All Students</button>
+                <Button size="sm">All Students</Button>
             </NavLink>
             <NavLink to="/transportations">
-                <button> Transportation</button>
+                <Button size="sm"> Transportation</Button>
             <NavLink to="/studentupdateform">
-                <button> Update Student Information</button>
+                <Button size="sm"> Update Student Information</Button>
             </NavLink>
             </NavLink>
-            <Search handleSearch={handleSearch} />
+            <Search  handleSearch={handleSearch} />
         </div>
     )
 }
