@@ -2,12 +2,14 @@ import React, { useEffect, useState } from "react";
 import Form from 'react-bootstrap/Form';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
+import { useHistory } from 'react-router-dom';
 
 function DismissalChangeForm({addDismissalChange, students, currentUser}) {
     const [date, setDate] = useState("")
     const [transportation_id, setTransportation_id] = useState([])
     const [user, setUser] = useState([])
     const [studentId, setStudentId] = useState([])
+    const history = useHistory()
 
 useEffect(() => {
     fetch(`http://localhost:3000/users/${id}`)
@@ -41,6 +43,7 @@ const studentOptions = students?.map((student) => { return (
         .then((r) => r.json())
         .then((changeRequest) => {
             addDismissalChange(changeRequest);
+            history.push('/dismissalchangescontainer')
         });
     }
 

@@ -17,7 +17,7 @@ function DismissalChangesContainer({filteredModifications, handleDeleteDismissal
     })
     return (
         <div>
-            <h2> Current Dismissal Changes</h2>
+            <header className="App-header">Dismissal Changes</header>
             {dismissalChanges}
         </div>
     )

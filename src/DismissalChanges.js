@@ -17,7 +17,7 @@ function DismissalChanges({ student, modifications, handleDeleteDismissalChange}
     )
 })
     return (
-        <div> 
+        <div>    
            {mods}
         </div>
     )

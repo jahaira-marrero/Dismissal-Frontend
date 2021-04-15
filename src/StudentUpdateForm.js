@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import { useHistory } from "react-router-dom";
 import Button from 'react-bootstrap/Button';
 
 function StudentUpdateForm({handleStudentUpdateForm, transportations, students}) {
@@ -9,6 +10,7 @@ function StudentUpdateForm({handleStudentUpdateForm, transportations, students})
     const [homeroom, setHomeroom] = useState("0")
     const [phone, setPhone] = useState("0001234567")
     const [transportation_id, setTransportation_id] = useState("")
+    const history = useHistory
     
 
     const studentObj = students.map((student) => { return (
@@ -37,6 +39,7 @@ function handleStudentUpdate(e) {
     })
         .then((r) => r.json())
         .then((updatedStudentInfo) => handleStudentUpdateForm(updatedStudentInfo))
+        history.push("/students");
 }
 
     return (

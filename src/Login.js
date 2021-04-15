@@ -2,10 +2,13 @@ import React, { useState } from "react";
 import Form from 'react-bootstrap/Form';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
+import { useHistory } from 'react-router-dom';
 
 function Login({changeLogin}) {
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
+    const history = useHistory()
+   
 
     function changeUsername(e) {
         setUsername(e.target.value)
@@ -31,11 +34,23 @@ function Login({changeLogin}) {
     })
         .then(r => r.json())
         .then(data => changeLogin(data))
+        history.push('/home')
     }
+const busPic="https://brazilbustravel.com/blog/wp-content/uploads/2017/09/seat.png"
 
     return(
-        <div>
-            Login Page PlaceHolder
+        <div 
+        style={{
+            background: `url(${busPic})`,
+            height: "100vh",
+            width: "100%",
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+          }}
+        >
+        <h1 className="center" style={{color: "white"}}>Dismissal Made Easy</h1>
+      
+            <h3 style={{color: "white"}}>Log In   </h3>
             <Form  onSubmit={handleSubmit}>
             <Form.Row>
         
@@ -45,7 +60,7 @@ function Login({changeLogin}) {
             name="username"
             value={username}
             onChange={changeUsername}>
-            <Form.Label>Username</Form.Label>
+            {/* <Form.Label>Username</Form.Label> */}
             <Form.Control size="sm" type="text" placeholder="username" />
             </Form.Group>
             </Col>
@@ -56,7 +71,7 @@ function Login({changeLogin}) {
             name="passworde"
             value={password}
             onChange={changePassword}>
-            <Form.Label>Password</Form.Label>
+            {/* <Form.Label>Password</Form.Label> */}
             <Form.Control size="sm" type="text" placeholder="password" />
             </Form.Group>
             </Col>
@@ -64,6 +79,7 @@ function Login({changeLogin}) {
             <Col xs={1}><Button type="submit">Login</Button></Col>
             </Form.Row>
             </Form>
+      
         </div>
     );
 }
