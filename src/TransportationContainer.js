@@ -17,11 +17,9 @@ function TransportationContainer({transportations}) {
     return (
         <div>
             Transportation Container
-    
+            
                 {transportMethods}
-            
-         
-            
+              
         </div>
         )
 }

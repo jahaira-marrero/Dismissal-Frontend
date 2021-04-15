@@ -3,7 +3,7 @@ import Form from 'react-bootstrap/Form';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 
-function DismissalChangeForm({addDismissalChange, students}) {
+function DismissalChangeForm({addDismissalChange, students, currentUser}) {
     const [date, setDate] = useState("")
     const [transportation_id, setTransportation_id] = useState([])
     const [user, setUser] = useState([])
@@ -16,7 +16,7 @@ useEffect(() => {
     })
 },[]);
 
-const id = 1
+const id = currentUser.id
 
 const studentOptions = students?.map((student) => { return (
     <option key={student.id} value={student.id}>{student.name}</option>

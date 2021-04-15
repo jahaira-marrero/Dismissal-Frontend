@@ -1,4 +1,5 @@
 import React from "react";
+import Button from 'react-bootstrap/Button';
 
 function Modifications({student,transport, user, date, id, handleDeleteDismissalChange}) {
 
@@ -19,7 +20,7 @@ function Modifications({student,transport, user, date, id, handleDeleteDismissal
         <p>Date: {date}</p>
         <p> Changed to: {transport}</p>
         <p> Submitted by: {user}</p>
-        <button onClick={handleDelete}>Delete</button>
+        <Button onClick={handleDelete}>Delete</Button>
         </div>
     )
 }

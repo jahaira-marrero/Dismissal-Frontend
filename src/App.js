@@ -16,7 +16,7 @@ function App() {
   const [modifications, setModifications] = useState([])
   const [search, setSearch] = useState([])
   const [signedIn, setSignedIn] = useState(false)
-  const [currentUser, setCurrentUser] = useState({})
+  const [currentUser, setCurrentUser] = useState([])
 
   useEffect(() => {
     fetch("http://localhost:3000/students")
@@ -82,13 +82,18 @@ function handleSearch(newSearch) {
     <div className="App">
       <header className="App-header">
       <h1> Dismissal Made Easy</h1>
+      Welcome {currentUser.name}
       <NavBar handleSearch={handleSearch} signedIn={signedIn} changeLogin={changeLogin}/>
       </header>
+      <Route exact path="/myprofile/:id">
+          <MyProfile user={currentUser} setCurrentUser={setCurrentUser} />
+      </Route>
       <Route exact path="/dismissalchangeform">
           <DismissalChangeForm currentUser={currentUser} addDismissalChange={handleAddDismissalChange} students={students}/>
       </Route>
         <DismissalChangesContainer filteredModifications={filteredModifications} handleDeleteDismissalChange={handleDeleteDismissalChange} />
       <Switch>
+      
         <Route exact path="/studentupdateform">
           <StudentUpdateForm handleStudentUpdateForm={handleStudentUpdateForm} students={students} transportations={transportations}/>
         </Route>
@@ -101,9 +106,7 @@ function handleSearch(newSearch) {
         <Route exact path="/login">
           <Login changeLogin={changeLogin} />
         </Route>
-        <Route exact path="/myprofile">
-          <MyProfile user={currentUser} setCurrentUser={setCurrentUser} />
-        </Route>
+       
       </Switch>
     </div>
   );

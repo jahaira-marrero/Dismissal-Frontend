@@ -44,7 +44,7 @@ function Login({changeLogin}) {
             id="usernamee"
             name="username"
             value={username}
-            onChange={setUsername}>
+            onChange={changeUsername}>
             <Form.Label>Username</Form.Label>
             <Form.Control size="sm" type="text" placeholder="username" />
             </Form.Group>
@@ -55,7 +55,7 @@ function Login({changeLogin}) {
             id="password"
             name="passworde"
             value={password}
-            onChange={setPassword}>
+            onChange={changePassword}>
             <Form.Label>Password</Form.Label>
             <Form.Control size="sm" type="text" placeholder="password" />
             </Form.Group>

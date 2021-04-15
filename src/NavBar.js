@@ -10,6 +10,9 @@ function NavBar({handleSearch}) {
             <NavLink to="/login">
                 <Button size="sm">Login</Button>
             </NavLink>
+            <NavLink to="/myprofile/:id">
+                <Button size="sm">My Profile</Button>
+            </NavLink>
             <NavLink to="/">
                 <Button size="sm">Home Page</Button>
             </NavLink>

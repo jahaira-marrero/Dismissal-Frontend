@@ -1,20 +1,13 @@
 import React from "react";
 
-function MyProfileMods({modifications}) {
-
-    const myMods = modifications.map((mods) => {
-        return (
-        <li
-        key={mods.id}
-        date={mods.date}
-        student={mods.student_id}
-        />
-    )}); 
+function MyProfileMods({date, student, transportation}) {
 
     return (
         <div> 
-            My Transportation History
-        {myMods}
+           <h4> My Dismissal Change History</h4>
+            <p>Date Submitted: {date}</p> 
+            <p>Student: {student}</p>
+            <p>Transportation Changed to: {transportation}</p>
         </div>
     )
 }
