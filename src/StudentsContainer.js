@@ -17,16 +17,17 @@ function StudentsContainer({filteredStudents, handleStudentUpdateForm, students,
             handleStudentUpdateForm={handleStudentUpdateForm} 
             students={students} 
             transForm={transportations}
+            hr={student.homeroom}
             id={student.id}
             />
         )
     })
  
     return (
-        <div> 
-            <h2>Student Container</h2>
+        <ul className="cards"> 
+    
               {studentCards}
-        </div>
+        </ul>
       
     )
 }

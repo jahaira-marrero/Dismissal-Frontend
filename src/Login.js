@@ -46,12 +46,13 @@ const busPic="https://brazilbustravel.com/blog/wp-content/uploads/2017/09/seat.p
             width: "100%",
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
-          }}
-        >
-        <h1 className="center" style={{color: "white"}}>Dismissal Made Easy</h1>
+          }}>
+            <h1 id="dismissal" style={{color: "white",  display: "flex",lineHeight: "6", font: "4rem", justifyContent: "center", height: "10vh"}}>
+                Dismissal Made Easy </h1>
+            <section  style={{color: "white",  display: "flex", justifyContent: "center"}}>
       
-            <h3 style={{color: "white"}}>Log In   </h3>
-            <Form  onSubmit={handleSubmit}>
+            <h3 style={{color: "white", margin: "25px", marginTop: "200px", justifyContent: "center"}}>Log In  </h3>
+            <Form  onSubmit={handleSubmit} style={{marginTop: "200px"}} >
             <Form.Row>
         
             <Col xs={3}>
@@ -79,7 +80,8 @@ const busPic="https://brazilbustravel.com/blog/wp-content/uploads/2017/09/seat.p
             <Col xs={1}><Button type="submit">Login</Button></Col>
             </Form.Row>
             </Form>
-      
+           
+            </section>
         </div>
     );
 }

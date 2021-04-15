@@ -1,19 +1,17 @@
 import React from "react";
-// import NavBar from "./NavBar";
-import Search from "./Search";
 import { useHistory } from 'react-router-dom';
+import Button from 'react-bootstrap/Button';
 
 
-function Home({currentUser, handleSearch}) {
+function Home({currentUser}) {
     const history = useHistory()
     
     return (
-        <div>Welcome {currentUser?.name}
-            <Search  handleSearch={handleSearch} />
-            <button onClick={()=>history.push("/dismissalchangescontainer")}>Current Dismissal Changes</button>
-            <button onClick={()=>history.push("/dismissalchangeform")}>Add Dismissal Change</button>
-            <button>All Students</button>
-            <button>Transportation</button>
+        <div> <h2>Welcome {currentUser?.name}</h2>
+            <Button onClick={()=>history.push("/dismissalchangescontainer")}>Current Dismissal Changes</Button>
+            <Button onClick={()=>history.push("/dismissalchangeform")}>Add Dismissal Change</Button>
+            <Button onClick={()=>history.push("/students")}>All Students</Button>
+            <Button onClick={()=>history.push("/transportations")}>Transportation</Button>
         </div>
     )
 }
