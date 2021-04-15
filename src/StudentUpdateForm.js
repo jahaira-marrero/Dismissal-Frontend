@@ -10,7 +10,7 @@ function StudentUpdateForm({handleStudentUpdateForm, transportations, students})
     const [homeroom, setHomeroom] = useState("0")
     const [phone, setPhone] = useState("0001234567")
     const [transportation_id, setTransportation_id] = useState("")
-    const history = useHistory
+    const history = useHistory()
     
 
     const studentObj = students.map((student) => { return (
@@ -39,7 +39,7 @@ function handleStudentUpdate(e) {
     })
         .then((r) => r.json())
         .then((updatedStudentInfo) => handleStudentUpdateForm(updatedStudentInfo))
-        history.push("/students");
+        history.push('/students');
 }
 
     return (

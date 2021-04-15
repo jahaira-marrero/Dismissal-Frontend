@@ -1,9 +1,8 @@
 import React from "react";
-import Search from "./Search";
 import { NavLink } from "react-router-dom";
 import Button from 'react-bootstrap/Button';
 
-function NavBar({handleSearch}) {
+function NavBar() {
 
     return (
         <div className="NavBar">

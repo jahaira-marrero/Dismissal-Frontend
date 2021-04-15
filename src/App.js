@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import { Switch, Route } from "react-router-dom";
-// import NavBar from "./NavBar";
+import NavBar from "./NavBar";
 import DismissalChangeForm from "./DismissalChangeForm"
 import StudentsContainer from "./StudentsContainer";
 import TransportationContainer from "./TransportationContainer";
@@ -16,8 +16,7 @@ function App() {
   const [transportations, setTransportations] = useState([])
   const [modifications, setModifications] = useState([])
   const [search, setSearch] = useState([])
-  const [signedIn, setSignedIn] = useState(false)
-  const [currentUser, setCurrentUser] = useState([])
+  const [currentUser, setCurrentUser] = useState(null)
 
   useEffect(() => {
     fetch("http://localhost:3000/students")
@@ -43,10 +42,6 @@ useEffect(() => {
 })
 },[]);
 
-function changeLogin(userInfo) {
-  setSignedIn(!signedIn)
-  setCurrentUser(userInfo)
-}
 
 function handleAddDismissalChange(newDismissalChange) {
   const newDismissalChanges = [...modifications, newDismissalChange];
@@ -81,19 +76,19 @@ function handleSearch(newSearch) {
 
   return (
     <div className="App">
+       {currentUser ? <NavBar/> : null} 
+     
       <Switch>
 
       <Route exact path="/login">
-        <Login changeLogin={changeLogin} />
+        <Login setCurrentUser={setCurrentUser}/>
       </Route>
 
       <Route exact path="/home">
-        <Home handleSearch={handleSearch} currentUser={currentUser} signedIn={signedIn} changeLogin={changeLogin}/>
+        <Home handleSearch={handleSearch} currentUser={currentUser}/>
       </Route>
 
-      {/* <Route exact path="/navbar">
-        <NavBar  />
-      </Route> */}
+      
 
       <Route exact path="/myprofile/:id">
           <MyProfile user={currentUser} setCurrentUser={setCurrentUser} />

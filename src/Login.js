@@ -4,7 +4,7 @@ import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import { useHistory } from 'react-router-dom';
 
-function Login({changeLogin}) {
+function Login({setCurrentUser}) {
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
     const history = useHistory()
@@ -33,7 +33,7 @@ function Login({changeLogin}) {
         body: JSON.stringify(newLogin)
     })
         .then(r => r.json())
-        .then(data => changeLogin(data))
+        .then(data => setCurrentUser(data))
         history.push('/home')
     }
 const busPic="https://brazilbustravel.com/blog/wp-content/uploads/2017/09/seat.png"
