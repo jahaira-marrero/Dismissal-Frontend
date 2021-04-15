@@ -43,8 +43,8 @@ function Login({changeLogin}) {
             <Form.Group size="sm" controlId="username"
             id="usernamee"
             name="username"
-            value="username"
-            onChange={(e) => setUsername(e.target.value)}>
+            value={username}
+            onChange={setUsername}>
             <Form.Label>Username</Form.Label>
             <Form.Control size="sm" type="text" placeholder="username" />
             </Form.Group>
@@ -54,14 +54,13 @@ function Login({changeLogin}) {
             <Form.Group size="sm" controlId="password"
             id="password"
             name="passworde"
-            value="password"
-            onChange={(e) => setPassword(e.target.value)}>
+            value={password}
+            onChange={setPassword}>
             <Form.Label>Password</Form.Label>
             <Form.Control size="sm" type="text" placeholder="password" />
             </Form.Group>
             </Col>
-           
-
+    
             <Col xs={1}><Button type="submit">Login</Button></Col>
             </Form.Row>
             </Form>

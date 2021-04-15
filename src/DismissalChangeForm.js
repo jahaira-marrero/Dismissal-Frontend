@@ -8,7 +8,6 @@ function DismissalChangeForm({addDismissalChange, students}) {
     const [transportation_id, setTransportation_id] = useState([])
     const [user, setUser] = useState([])
     const [studentId, setStudentId] = useState([])
-    
 
 useEffect(() => {
     fetch(`http://localhost:3000/users/${id}`)
@@ -48,100 +47,53 @@ const studentOptions = students?.map((student) => { return (
     return (
         <div>
             <h2>Dismissal Change Form</h2>
-        {/* <section>
-            <form onSubmit={handleSubmit}>
-                <h3>Insert Form Here</h3>
-                <label>Date Requested:</label>
-                <input
-                    type="text"
+                <Form  onSubmit={handleSubmit}>
+                <Form.Row>
+                    <Col xs={4}>
+                <Form.Group size="sm" controlId="student_id"
+                    id="student_id"
+                    name="student_id"
+                    value={studentId}
+                    onChange={(e) => setStudentId(e.target.value)} >
+                    <Form.Label>Student Name</Form.Label>
+                    <Form.Control size="sm" as="select">
+                    {studentOptions}
+                    </Form.Control>
+                </Form.Group>
+                </Col>
+
+                <Col xs={3}>
+                <Form.Group size="sm" controlId="date"
                     id="date"
                     name="date"
-                    value={date}
-                    onChange={(e) => setDate(e.target.value)}
-                    />
-                    {date.length === 0 ? (
-                        <p style={{color: "red"}}>You must input a date!</p>) : null}
-                <label>Transportation</label>
-                <select
-                    id="transportation_id"
-                    name="transportation_id"
-                    value={transportation_id}
-                    onChange={(e) => setTransportation_id(e.target.value)}
-                >
+                    value="date"
+                    onChange={(e) => setDate(e.target.value)}>
+                    <Form.Label>Date</Form.Label>
+                    <Form.Control size="sm" type="text" placeholder="Date" />
+                </Form.Group>
+                </Col>
+                
+                <Col xs={3}>
+                <Form.Group size="sm" controlId="transportation_id"
+                id="transportation_id"
+                name="transportation_id"
+                value="transportation_id"
+                onChange={(e) => setTransportation_id(e.target.value)}>
+                    <Form.Label>Transportation</Form.Label>
+                    <Form.Control size="sm" as="select">
                     <option value="1">Bus 1</option>
                     <option value="2">Bus 2</option>
                     <option value="3">Walker</option>
                     <option value="4">Car Rider</option>
                     <option value="5">Early Pick Up</option>
-                </select>
-
-                <label> Student</label>
-                <select 
-                    id="student_id"
-                    name="student_id"
-                    value={studentId}
-                    onChange={(e) => setStudentId(e.target.value)}
-                    >
-                        {studentOptions}
-                    </select>
-                <button type="submit">Add Dismissal Change</button>
-            </form>
-        </section> */}
-
-
-<Form  onSubmit={handleSubmit}>
-<Form.Row>
-    <Col xs={4}>
-<Form.Group size="sm" controlId="student_id"
-    id="student_id"
-    name="student_id"
-    value={studentId}
-    onChange={(e) => setStudentId(e.target.value)}
->
-    <Form.Label>Student Name</Form.Label>
-    <Form.Control size="sm" as="select">
-      {studentOptions}
-    </Form.Control>
-  </Form.Group>
-  </Col>
- 
-
-<Col xs={3}>
-  <Form.Group size="sm" controlId="date"
-    id="date"
-    name="date"
-    value="date"
-    onChange={(e) => setDate(e.target.value)}
-  >
-    <Form.Label>Date</Form.Label>
-    <Form.Control size="sm" type="text" placeholder="Date" />
-  </Form.Group>
-  </Col>
- 
-
-
-  <Col xs={3}>
-  <Form.Group size="sm" controlId="transportation_id"
-  id="transportation_id"
-  name="transportation_id"
-  value="transportation_id"
-  onChange={(e) => setTransportation_id(e.target.value)}
-  >
-    <Form.Label>Transportation</Form.Label>
-    <Form.Control size="sm" as="select">
-      <option value="1">Bus 1</option>
-      <option value="2">Bus 2</option>
-      <option value="3">Walker</option>
-      <option value="4">Car Rider</option>
-      <option value="5">Early Pick Up</option>
-    </Form.Control>
-  </Form.Group>
-  </Col>
-  <Col xs={1}><Button type="submit">Submit Change</Button></Col>
-  </Form.Row>
-</Form>
-         </div>
-    );
-}
+                    </Form.Control>
+                </Form.Group>
+                </Col>
+                <Col xs={1}><Button type="submit">Submit Change</Button></Col>
+                </Form.Row>
+                </Form>
+            </div>
+            );
+        }
 
 export default DismissalChangeForm;

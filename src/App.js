@@ -5,9 +5,6 @@ import DismissalChangeForm from "./DismissalChangeForm"
 import StudentsContainer from "./StudentsContainer";
 import TransportationContainer from "./TransportationContainer";
 import DismissalChangesContainer from "./DismissalChangesContainer";
-// import Search from "./Search";
-// import StudentCards from "./StudentCards";
-// import DismissalChanges from "./DismissalChanges";
 import StudentUpdateForm from "./StudentUpdateForm";
 import Login from "./Login";
 import MyProfile from "./MyProfile";
@@ -71,8 +68,6 @@ const filteredStudents = students.filter(student => {
 
 const filteredModifications = students.filter((student) => student.modifications.length >0)
 
-// const filteredTransportations = students.filter((student) => student.transportation.name)
-
 function handleDeleteDismissalChange(id) {
   const deleteDismissalChange = modifications.filter(
     (modification) => modification.id !== id);
@@ -92,8 +87,7 @@ function handleSearch(newSearch) {
       <Route exact path="/dismissalchangeform">
           <DismissalChangeForm currentUser={currentUser} addDismissalChange={handleAddDismissalChange} students={students}/>
       </Route>
-      <DismissalChangesContainer filteredModifications={filteredModifications} handleDeleteDismissalChange={handleDeleteDismissalChange} />
-      
+        <DismissalChangesContainer filteredModifications={filteredModifications} handleDeleteDismissalChange={handleDeleteDismissalChange} />
       <Switch>
         <Route exact path="/studentupdateform">
           <StudentUpdateForm handleStudentUpdateForm={handleStudentUpdateForm} students={students} transportations={transportations}/>

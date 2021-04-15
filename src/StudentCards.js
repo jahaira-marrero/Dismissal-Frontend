@@ -1,5 +1,4 @@
 import React, {useState} from "react";
-// import {useHistory} from "react-router-dom";
 import StudentDismissalDetails from "./StudentDismissalDetails";
 import StudentUpdateForm from "./StudentUpdateForm";
 import Button from 'react-bootstrap/Button';
@@ -7,7 +6,6 @@ import Button from 'react-bootstrap/Button';
 function StudentCards({name, address, guardian, phone, transportation, modifications, handleStudentUpdateForm, students, transForm}) {
     const [showDetails, setShowDetails] = useState(false)
     const [showUpdateForm, setShowUpdateForm] = useState(false)
-    // const history = useHistory()
 
     const dismissalModification = modifications.map((modification) => {
         

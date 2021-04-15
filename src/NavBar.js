@@ -5,7 +5,6 @@ import Button from 'react-bootstrap/Button';
 
 function NavBar({handleSearch}) {
 
-
     return (
         <div className="NavBar">
             <NavLink to="/login">
@@ -25,9 +24,9 @@ function NavBar({handleSearch}) {
             </NavLink>
             <NavLink to="/transportations">
                 <Button size="sm"> Transportation</Button>
+                </NavLink>
             <NavLink to="/studentupdateform">
                 <Button size="sm"> Update Student Information</Button>
-            </NavLink>
             </NavLink>
             <Search  handleSearch={handleSearch} />
         </div>
