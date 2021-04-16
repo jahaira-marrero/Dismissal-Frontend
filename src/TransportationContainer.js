@@ -18,7 +18,7 @@ function TransportationContainer({transportations}) {
         <div>
             Transportation Container
             
-                {transportMethods}
+               {transportMethods}
               
         </div>
         )

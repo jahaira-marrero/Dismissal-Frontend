@@ -6,6 +6,7 @@ import StudentsContainer from "./StudentsContainer";
 import TransportationContainer from "./TransportationContainer";
 import DismissalChangesContainer from "./DismissalChangesContainer";
 import StudentUpdateForm from "./StudentUpdateForm";
+import StudentCards from "./StudentCards";
 import Login from "./Login";
 import MyProfile from "./MyProfile";
 import Home from "./Home";
@@ -106,6 +107,10 @@ function handleSearch(newSearch) {
         <StudentUpdateForm handleStudentUpdateForm={handleStudentUpdateForm} students={students} transportations={transportations}/>
       </Route>
 
+      <Route exact path="/students/:id">
+        <StudentCards />
+      </Route>
+
       <Route exact path="/students">
         <StudentsContainer students={students} filteredStudents={filteredStudents} handleStudentUpdateForm={handleStudentUpdateForm} transportations={transportations} />
       </Route>
@@ -114,8 +119,6 @@ function handleSearch(newSearch) {
         <TransportationContainer transportations={transportations} />
       </Route>
 
-   
-       
       </Switch>
     </div>
   );

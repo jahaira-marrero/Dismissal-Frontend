@@ -1,12 +1,14 @@
 import React, { useState } from "react";
-
+import { useHistory } from 'react-router-dom';
 
 function Search({handleSearch}) {
   const [currentSearch, setCurrentSearch] = useState("")
+  const history = useHistory()
   
   function handleSubmit(e) {
     e.preventDefault();
     handleSearch(currentSearch);
+    // history.push(`/students/:id`)
   }
 
   return (
