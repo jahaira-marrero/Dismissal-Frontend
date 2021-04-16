@@ -10,7 +10,7 @@ import StudentCards from "./StudentCards";
 import Login from "./Login";
 import MyProfile from "./MyProfile";
 import Home from "./Home";
-// import "./App.css";
+import "./App.css";
 
 function App() {
   const [students, setStudents] = useState([])

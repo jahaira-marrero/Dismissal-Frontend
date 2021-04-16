@@ -7,11 +7,10 @@ import Button from 'react-bootstrap/Button';
 function NavBar({handleSearch}) {
 
     return (
-        <div className="NavBar">
-            <NavLink to="/">
+        <header className="App-header">
+            <NavLink to="/home">
                 <Button size="sm">Home Page</Button> {" "}
             </NavLink>
-
             <NavLink to="/myprofile/:id">
                 <Button size="sm">My Profile</Button> {" "}
             </NavLink>
@@ -19,7 +18,7 @@ function NavBar({handleSearch}) {
             <Button size="sm" > Logout</Button> {" "}
             </NavLink>
             <Search handleSearch={handleSearch} />
-        </div>
+        </header>
     )
 }
 
