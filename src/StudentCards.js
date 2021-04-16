@@ -31,11 +31,10 @@ function StudentCards({id, name,hr, address, guardian, phone, transportation, mo
         }
 
     return (
-        <div className="card-group" id={id}
+        <div className="card-group" id={id} 
       
-        
-        >
-                <Card.Body id={id}>
+        >       <Card style={{ width: "18rem", border: "red"}}>
+                <Card.Body id={id} >
                     <Card.Title>{name}</Card.Title>
                     <Card.Subtitle className="mb-2 text-muted">Transportation: {transportation}</Card.Subtitle>
                     <Card.Text>
@@ -61,6 +60,7 @@ function StudentCards({id, name,hr, address, guardian, phone, transportation, mo
                     <Button size="sm" onClick={handleClick}> See Prior Changes</Button>
                       {showDetails ?  <p>{dismissalModification}</p> : null}
                 </Card.Body> 
+                </Card>
         </div>
     )
 }
