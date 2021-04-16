@@ -1,15 +1,20 @@
 import React from "react";
+import Card from 'react-bootstrap/Card';
 
-function StudentDismissalDetails({date, transName, transUser}) {
+function StudentDismissalDetails({date, transName, transUser, modId}) {
 
         return (
-       
-        <li>
-            <h3>Dismissal Changes Details</h3>
-            <p>Date: {date}</p>
-            <p>Changed to: {transName}</p>
-            <p>Submitted by: {transUser}</p>
-        </li>
+            <div>
+        <Card style={{ width: '18rem', background: "pink", margin: "1rem" }} id={modId}>
+            <Card.Body>
+                <Card.Title>Date: {date}</Card.Title>
+                <Card.Subtitle className="mb-2 text-muted" >Changed to: {transName}</Card.Subtitle>
+                <Card.Text >
+                Submitted by: {transUser}
+                </Card.Text>
+            </Card.Body>
+        </Card>
+        </div>
     )
 }
 

@@ -36,7 +36,7 @@ function Login({setCurrentUser}) {
         .then(data => setCurrentUser(data))
         history.push('/home')
     }
-const busPic="https://brazilbustravel.com/blog/wp-content/uploads/2017/09/seat.png"
+const busPic = "https://brazilbustravel.com/blog/wp-content/uploads/2017/09/seat.png"
 
     return(
         <div 

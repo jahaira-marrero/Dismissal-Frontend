@@ -13,7 +13,8 @@ function Home({currentUser}) {
     const history = useHistory()
 
 const image="https://www.cabnetsol.com.au/wp-content/uploads/2017/06/homepage-background.jpg"
-    return (
+  
+return (
     <div 
         style={{
             background: `url(${image})`,

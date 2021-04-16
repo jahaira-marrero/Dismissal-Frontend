@@ -1,13 +1,17 @@
 import React from "react";
-import Search from "./Search";
+// import Search from "./Search";
 import { NavLink } from "react-router-dom";
 import Button from 'react-bootstrap/Button';
 
 
-function NavBar({handleSearch}) {
+function NavBar({setCurrentUser}) {
+
+    function logout() {
+        setCurrentUser(null);
+    }
 
     return (
-        <header className="App-header">
+        <header>
             <NavLink to="/home">
                 <Button size="sm">Home Page</Button> {" "}
             </NavLink>
@@ -15,9 +19,9 @@ function NavBar({handleSearch}) {
                 <Button size="sm">My Profile</Button> {" "}
             </NavLink>
             <NavLink to="/login">
-            <Button size="sm" > Logout</Button> {" "}
+            <Button size="sm" onClick={()=>logout} > Logout</Button> {" "}
             </NavLink>
-            <Search handleSearch={handleSearch} />
+            {/* <Search handleSearch={handleSearch} /> */}
         </header>
     )
 }

@@ -1,18 +1,16 @@
 import React, {useState} from "react";
-import { useHistory } from "react-router-dom";
 import Button from 'react-bootstrap/Button';
 
-function StudentUpdateForm({handleStudentUpdateForm, transportations, students}) {
+function StudentUpdateForm({handleStudentUpdateForm, transportations,students, studentName, studentAddress, studentGuardian,studentHr, studentPhone}) {
     const [id, setId] = useState([])
-    const [name, setName] = useState("")
-    const [address, setAddress] =  useState("")
-    const [guardian, setGuardian] = useState("")
-    const [homeroom, setHomeroom] = useState("0")
-    const [phone, setPhone] = useState("0001234567")
+    const [name, setName] = useState(studentName)
+    const [address, setAddress] =  useState(studentAddress)
+    const [guardian, setGuardian] = useState(studentGuardian)
+    const [homeroom, setHomeroom] = useState(studentHr)
+    const [phone, setPhone] = useState(studentPhone)
     const [transportation_id, setTransportation_id] = useState("")
-    const history = useHistory()
+  
     
-
     const studentObj = students.map((student) => { return (
         <option key={student.id} value={student.id}>{student.name}</option>
     )})
@@ -38,15 +36,14 @@ function handleStudentUpdate(e) {
         }),
     })
         .then((r) => r.json())
-        .then((updatedStudentInfo) => handleStudentUpdateForm(updatedStudentInfo))
-        history.push('/students');
+        .then((updatedStudentInfo) => handleStudentUpdateForm(updatedStudentInfo));
+       
 }
 
     return (
-        <div><h3>Update Student Form Place Holder</h3>
+        <div><h3>Student Update Form</h3>
         <section>
             <form onSubmit={handleStudentUpdate}>
-                <p>Update Student Information</p>
                 <label>Student </label>
                 <select 
                     id="student.id"
@@ -55,7 +52,7 @@ function handleStudentUpdate(e) {
                     onChange={(e) => setId(e.target.value)}
                     ><option value="0">Select a Student</option>
                         {studentObj}
-                    </select>
+                    </select> 
                     <label>Name: </label>
                     <input 
                         type="text"

@@ -77,8 +77,7 @@ function handleSearch(newSearch) {
 
   return (
     <div className="App">
-       {currentUser ? <NavBar/> : null} 
-     
+       {currentUser ? <NavBar /> : null} 
       <Switch>
 
       <Route exact path="/login">
@@ -86,10 +85,8 @@ function handleSearch(newSearch) {
       </Route>
 
       <Route exact path="/home">
-        <Home handleSearch={handleSearch} currentUser={currentUser}/>
+        <Home  currentUser={currentUser}/>
       </Route>
-
-      
 
       <Route exact path="/myprofile/:id">
           <MyProfile user={currentUser} setCurrentUser={setCurrentUser} />
@@ -112,7 +109,7 @@ function handleSearch(newSearch) {
       </Route>
 
       <Route exact path="/students">
-        <StudentsContainer students={students} filteredStudents={filteredStudents} handleStudentUpdateForm={handleStudentUpdateForm} transportations={transportations} />
+        <StudentsContainer handleSearch={handleSearch} students={students} filteredStudents={filteredStudents} handleStudentUpdateForm={handleStudentUpdateForm} transportations={transportations} />
       </Route>
 
       <Route exact path="/transportations">

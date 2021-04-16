@@ -1,7 +1,8 @@
 import React from "react";
 import StudentCards from "./StudentCards";
+import Search from "./Search";
 
-function StudentsContainer({filteredStudents, handleStudentUpdateForm, students, transportations}) {
+function StudentsContainer({filteredStudents, handleStudentUpdateForm, students, transportations, handleSearch}) {
     
     const studentCards = filteredStudents.map((student) => {
 
@@ -19,15 +20,18 @@ function StudentsContainer({filteredStudents, handleStudentUpdateForm, students,
             transForm={transportations}
             hr={student.homeroom}
             id={student.id}
+            handleSearch={handleSearch}
             />
         )
     })
- 
+
     return (
-        <ul className="cards"> 
+        <div 
     
+        > 
+            <Search handleSearch={handleSearch}/> 
               {studentCards}
-        </ul>
+        </div>
       
     )
 }

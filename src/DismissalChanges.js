@@ -3,6 +3,7 @@ import Modifications from "./Modifications"
 
 function DismissalChanges({ student, modifications, handleDeleteDismissalChange}) {
 
+
     const mods = modifications.map((modification) => {
         return (
             <Modifications
@@ -16,6 +17,8 @@ function DismissalChanges({ student, modifications, handleDeleteDismissalChange}
     />
     )
 })
+
+
     return (
         <div>    
            {mods}
