@@ -47,7 +47,7 @@ const busPic="https://brazilbustravel.com/blog/wp-content/uploads/2017/09/seat.p
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
           }}>
-            <h1  style={{color: "white",  display: "flex",lineHeight: "6", font: "10rem", justifyContent: "center", height: "10vh"}}>
+            <h1  style={{color: "white",  display: "flex",lineHeight: "4", fontSize: "6rem", justifyContent: "center", height: "10vh"}}>
                 Dismissal Made Easy </h1>
             <section  style={{color: "white",  display: "flex", justifyContent: "center"}}>
       
