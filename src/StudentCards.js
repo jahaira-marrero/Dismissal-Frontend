@@ -10,7 +10,7 @@ function StudentCards({id, name,hr, address, guardian, phone, transportation, mo
     const [showUpdateForm, setShowUpdateForm] = useState(false)
 
     const dismissalModification = modifications.map((modification) => {
-        
+
         return (
             <StudentDismissalDetails  
             key={modification.id}
@@ -29,12 +29,14 @@ function StudentCards({id, name,hr, address, guardian, phone, transportation, mo
         function handleClick() {
             setShowDetails(!showDetails)
         }
-
+       
     return (
-        <div className="card-group" id={id} 
-      
-        >       <Card style={{ width: "18rem", border: "red"}}>
-                <Card.Body id={id} >
+        <div  id={id} 
+     
+        >  
+        <section>    
+            <Card style={{ width: "25rem", border: "red"}}>
+                    <Card.Body id={id} style={{width: "25rem"}}>
                     <Card.Title>{name}</Card.Title>
                     <Card.Subtitle className="mb-2 text-muted">Transportation: {transportation}</Card.Subtitle>
                     <Card.Text>
@@ -61,6 +63,7 @@ function StudentCards({id, name,hr, address, guardian, phone, transportation, mo
                       {showDetails ?  <p>{dismissalModification}</p> : null}
                 </Card.Body> 
                 </Card>
+                </section> 
         </div>
     )
 }

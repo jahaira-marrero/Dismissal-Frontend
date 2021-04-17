@@ -20,6 +20,7 @@ function App() {
   const [search, setSearch] = useState([])
   const [currentUser, setCurrentUser] = useState(null)
 
+
   useEffect(() => {
     fetch("http://localhost:3000/students")
     .then(r => r.json())
@@ -72,6 +73,7 @@ function handleDeleteDismissalChange(id) {
     setModifications(deleteDismissalChange)
 }
 
+
 function handleSearch(newSearch) {
   setSearch(newSearch);
 }
@@ -90,7 +92,7 @@ function handleSearch(newSearch) {
       </Route>
 
       <Route exact path="/myprofile/:id">
-          <MyProfile user={currentUser} setCurrentUser={setCurrentUser} />
+          <MyProfile user={currentUser} setCurrentUser={setCurrentUser} filteredModifications={filteredModifications}/>
       </Route>
 
       <Route exact path="/dismissalchangeform">

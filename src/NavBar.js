@@ -11,9 +11,9 @@ function NavBar({setCurrentUser}) {
     }
 
     return (
-        <header>
+        <header style={{background: "#212529", height: "3rem", justifyContent: "center", lineHeight: "4"}}>
             <NavLink to="/home">
-                <Button size="sm">Home Page</Button> {" "}
+                <Button size="sm">Home Page</Button> {" "} 
             </NavLink>
             <NavLink to="/myprofile/:id">
                 <Button size="sm">My Profile</Button> {" "}

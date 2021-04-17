@@ -2,6 +2,7 @@ import React from "react";
 import MyProfileMods from "./MyProfileMods";
 
 function MyProfile({user}) {
+
    const modifications = user.modifications.map((mods) => {
 
     return (
@@ -17,8 +18,6 @@ function MyProfile({user}) {
         <div>
             {user.name}
             {modifications}
-          
-             
         </div>
     )
 }
