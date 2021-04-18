@@ -32,13 +32,14 @@ function StudentCards({id, name,hr, address, guardian, phone, transportation, mo
        
     return (
         <div  id={id} 
-     
+        style={{width: "400px"}}
         >  
-        <section>    
-            <Card style={{ width: "25rem", border: "red"}}>
-                    <Card.Body id={id} style={{width: "25rem"}}>
-                    <Card.Title>{name}</Card.Title>
-                    <Card.Subtitle className="mb-2 text-muted">Transportation: {transportation}</Card.Subtitle>
+            <br></br>
+            <br></br>
+            <Card style={{borderColor: "blue", border: "3px", baorderRadius: "3.25rem", background: "white"}} >
+                    <Card.Body id={id} style={{content: "center"}}>
+                    <Card.Title >{name}</Card.Title>
+                    <Card.Subtitle className="mb-2 text-muted" style={{content: "center"}}>Transportation: {transportation}</Card.Subtitle>
                     <Card.Text>
                     <p>Home Address: {address}</p> 
                     <p>Guardian: {guardian}</p> 
@@ -63,7 +64,7 @@ function StudentCards({id, name,hr, address, guardian, phone, transportation, mo
                       {showDetails ?  <p>{dismissalModification}</p> : null}
                 </Card.Body> 
                 </Card>
-                </section> 
+             
         </div>
     )
 }

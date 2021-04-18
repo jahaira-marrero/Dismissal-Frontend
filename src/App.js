@@ -77,9 +77,15 @@ function handleDeleteDismissalChange(id) {
 function handleSearch(newSearch) {
   setSearch(newSearch);
 }
-
+const image="https://www.cabnetsol.com.au/wp-content/uploads/2017/06/homepage-background.jpg"
   return (
-    <div className="App">
+    <div className="App" style={{
+      background: `url(${image})`,
+      height: "100vh",
+      width: "100%",
+      backgroundRepeat: "no-repeat",
+      backgroundSize: "cover",
+    }}>
        {currentUser ? <NavBar /> : null} 
       <Switch>
 
@@ -117,6 +123,10 @@ function handleSearch(newSearch) {
 
       <Route exact path="/transportations">
         <TransportationContainer transportations={transportations} />
+      </Route>
+
+      <Route path="*">
+          <h1>404 not found</h1>
       </Route>
 
       </Switch>

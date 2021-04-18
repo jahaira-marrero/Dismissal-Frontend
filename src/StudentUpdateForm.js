@@ -41,7 +41,7 @@ function handleStudentUpdate(e) {
 }
 
     return (
-        <div><h3>Student Update Form</h3>
+        <div style={{background: "#a3c8e4e6"}}><h3>Student Update Form</h3>
         <section>
             <form onSubmit={handleStudentUpdate}>
                 <label>Student </label>

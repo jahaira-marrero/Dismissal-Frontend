@@ -15,6 +15,8 @@ function DismissalChangesContainer({filteredModifications, handleDeleteDismissal
             />
         )
     })
+
+
     return (
         <div>
             <header className="App-header">Dismissal Changes</header>

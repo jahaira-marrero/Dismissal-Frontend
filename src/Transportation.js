@@ -1,13 +1,25 @@
 import React from "react";
-// import Table from 'react-bootstrap/Table'
+import Table from 'react-bootstrap/Table';
 
 function Transportation({name, students}) {
 
-    console.log(students[25])
+  const studentArray=students.map((student) => (
+    <tbody>
+    <tr>
+    <td>{student}</td>
+    </tr>
+</tbody>
+  ))
     return (
         <div>
-        <h2> {name} </h2> 
-        <p>{students[36]}</p>
+                <Table striped bordered hover size="sm">
+                <thead>
+                    <tr>
+                    <th><h2>{name}</h2></th>
+                    </tr>
+                </thead>
+               {studentArray}
+                </Table>
         </div>
        
     )
