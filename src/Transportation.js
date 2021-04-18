@@ -6,7 +6,8 @@ function Transportation({name, students}) {
   const studentArray=students.map((student) => (
     <tbody>
     <tr>
-    <td>{student}</td>
+    <td>
+        {student}</td>
     </tr>
 </tbody>
   ))

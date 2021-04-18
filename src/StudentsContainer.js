@@ -26,16 +26,9 @@ function StudentsContainer({filteredStudents, handleStudentUpdateForm, students,
     })
 
 
-    const image="https://www.cabnetsol.com.au/wp-content/uploads/2017/06/homepage-background.jpg"
+    
     return (
-        <div
-        style={{
-            background: `url(${image})`,
-            height: "100vh",
-            width: "100%",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-          }}> 
+        <div> 
             <Search handleSearch={handleSearch}/> 
               {studentCards}
         </div>

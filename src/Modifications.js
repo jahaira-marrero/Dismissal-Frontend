@@ -1,5 +1,6 @@
 import React from "react";
 import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
 
 function Modifications({student,transport, user, date, id, handleDeleteDismissalChange}) {
 
@@ -16,11 +17,20 @@ function Modifications({student,transport, user, date, id, handleDeleteDismissal
 
     return (
         <div>
-        <h3>{student} Dismissal Change</h3>
-        <p>Date: {date}</p>
-        <p> Changed to: {transport}</p>
-        <p> Submitted by: {user}</p>
-        <Button onClick={handleDelete}>Delete</Button>
+            <br></br>
+            <br></br>
+            <Card className="text-center">
+            <Card.Header>Date: {date}</Card.Header>
+            <Card.Body>
+                <Card.Title>{student}</Card.Title>
+                <Card.Text>
+                Changed to: {transport}
+                </Card.Text>
+                <Button onClick={handleDelete}>Delete</Button>
+            </Card.Body>
+            <Card.Footer className="text-muted">Submitted by: {user}</Card.Footer>
+            </Card>
+    
         </div>
     )
 }

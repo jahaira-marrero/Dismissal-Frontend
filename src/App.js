@@ -77,15 +77,9 @@ function handleDeleteDismissalChange(id) {
 function handleSearch(newSearch) {
   setSearch(newSearch);
 }
-const image="https://www.cabnetsol.com.au/wp-content/uploads/2017/06/homepage-background.jpg"
+
   return (
-    <div className="App" style={{
-      background: `url(${image})`,
-      height: "100vh",
-      width: "100%",
-      backgroundRepeat: "no-repeat",
-      backgroundSize: "cover",
-    }}>
+    <div className="App" >
        {currentUser ? <NavBar /> : null} 
       <Switch>
 

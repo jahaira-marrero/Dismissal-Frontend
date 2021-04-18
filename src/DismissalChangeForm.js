@@ -49,11 +49,11 @@ const studentOptions = students?.map((student) => { return (
 
     return (
         <div>
-            <h2>Dismissal Change Form</h2>
+            <h1 className="App-header">Dismissal Change Form</h1>
                 <Form  onSubmit={handleSubmit}>
                 <Form.Row>
-                    <Col xs={4}>
-                <Form.Group size="sm" controlId="student_id"
+                    <Col md={4}>
+                <Form.Group size="lg" controlId="student_id"
                     id="student_id"
                     name="student_id"
                     value={studentId}
@@ -65,8 +65,8 @@ const studentOptions = students?.map((student) => { return (
                 </Form.Group>
                 </Col>
 
-                <Col xs={3}>
-                <Form.Group size="sm" controlId="date"
+                <Col md={3}>
+                <Form.Group size="lg" controlId="date"
                     id="date"
                     name="date"
                     value="date"
@@ -76,8 +76,8 @@ const studentOptions = students?.map((student) => { return (
                 </Form.Group>
                 </Col>
                 
-                <Col xs={3}>
-                <Form.Group size="sm" controlId="transportation_id"
+                <Col md={3}>
+                <Form.Group size="lg" controlId="transportation_id"
                 id="transportation_id"
                 name="transportation_id"
                 value="transportation_id"

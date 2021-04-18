@@ -18,7 +18,15 @@ function DismissalChangesContainer({filteredModifications, handleDeleteDismissal
 
 
     return (
-        <div>
+        <div
+        
+        style={{backgroundImage: "https://www.cabnetsol.com.au/wp-content/uploads/2017/06/homepage-background.jpg",
+        height: "100vh",
+        width: "100%",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover"}}
+        
+        >
             <header className="App-header">Dismissal Changes</header>
             {dismissalChanges}
         </div>

@@ -16,7 +16,10 @@ function MyProfile({user}) {
    
     return(
         <div>
-            {user.name}
+            <h1>{user.name}</h1>
+            <h2>{user.role}</h2>
+            <p>{user.username}</p>
+            <h3> My Dismissal Change History</h3>
             {modifications}
         </div>
     )

@@ -1,5 +1,10 @@
 .App {
   text-align: center;
+  background-image: "https://www.cabnetsol.com.au/wp-content/uploads/2017/06/homepage-background.jpg";
+  height: 100vh;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-Size: cover;
 }
 
 .App-header {

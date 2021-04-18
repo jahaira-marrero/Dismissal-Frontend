@@ -7,8 +7,6 @@ import Col from 'react-bootstrap/Col';
 import Figure from 'react-bootstrap/Figure';
 import Card from 'react-bootstrap/Card';
 
-
-
 function Home({currentUser}) {
     const history = useHistory()
 
