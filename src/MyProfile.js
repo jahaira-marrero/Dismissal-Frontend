@@ -9,9 +9,8 @@ console.log(user)
         <MyProfileMods
         key={mods.id}
         date={mods.date}
-        student={mods["get_name"]}
-        transportation={mods.transportation_id}
-        studentName={user.get_name}
+        student={mods.get_name}
+        transportation={mods.get_transport}
         />
        )})
    
