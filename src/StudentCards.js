@@ -32,7 +32,7 @@ function StudentCards({id, name,hr, address, guardian, phone, transportation, mo
        
     return (
         <div  id={id} 
-        style={{width: "400px"}}
+        style={{width: "1150px", content: "center"}}
         >  
             <br></br>
             <br></br>
@@ -61,7 +61,7 @@ function StudentCards({id, name,hr, address, guardian, phone, transportation, mo
                       students={students} 
                       transportations={transForm} /> : null}
                     <Button size="sm" onClick={handleClick}> See Prior Changes</Button>
-                      {showDetails ?  <p>{dismissalModification}</p> : null}
+                      {showDetails ?  <p>{dismissalModification}</p> : null }
                 </Card.Body> 
                 </Card>
              
