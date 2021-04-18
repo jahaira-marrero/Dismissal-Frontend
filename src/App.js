@@ -73,7 +73,6 @@ function handleDeleteDismissalChange(id) {
     setModifications(deleteDismissalChange)
 }
 
-
 function handleSearch(newSearch) {
   setSearch(newSearch);
 }
