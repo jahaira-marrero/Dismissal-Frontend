@@ -4,13 +4,14 @@ import MyProfileMods from "./MyProfileMods";
 function MyProfile({user}) {
 
    const modifications = user.modifications.map((mods) => {
-
+console.log(user)
     return (
         <MyProfileMods
         key={mods.id}
         date={mods.date}
-        student={mods.student_id}
+        student={mods["get_name"]}
         transportation={mods.transportation_id}
+        studentName={user.get_name}
         />
        )})
    
