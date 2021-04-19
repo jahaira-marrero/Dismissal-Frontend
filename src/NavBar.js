@@ -1,19 +1,22 @@
 import React from "react";
-// import Search from "./Search";
 import { NavLink } from "react-router-dom";
 import Button from 'react-bootstrap/Button';
 
 
-function NavBar({setCurrentUser}) {
+function NavBar({setCurrentUser, handleSearch}) {
 
     function logout() {
         setCurrentUser(null);
     }
 
+    // function resetFilter() {
+    //     handleSearch("")
+    // }
+
     return (
         <header style={{background: "#212529", height: "3rem", justifyContent: "center", lineHeight: "4"}}>
             <NavLink to="/home">
-                <Button size="sm">Home Page</Button> {" "} 
+                <Button onClick={()=>handleSearch("")} size="sm">Home Page</Button> {" "} 
             </NavLink>
             <NavLink to="/myprofile/:id">
                 <Button size="sm">My Profile</Button> {" "}
@@ -21,7 +24,6 @@ function NavBar({setCurrentUser}) {
             <NavLink to="/login">
             <Button size="sm" onClick={()=>logout} > Logout</Button> {" "}
             </NavLink>
-            {/* <Search handleSearch={handleSearch} /> */}
         </header>
     )
 }

@@ -1,23 +1,18 @@
 import React, {useState} from "react";
 import Button from 'react-bootstrap/Button';
 
-function StudentUpdateForm({handleStudentUpdateForm, transportations,students, studentName, studentAddress, studentGuardian,studentHr, studentPhone}) {
-    const [id, setId] = useState([])
+function StudentUpdateForm({handleStudentUpdateForm, transportations, studentId, studentName, studentAddress, studentGuardian,studentHr, studentPhone}) {
+    const [id, setId] = useState(studentId)
     const [name, setName] = useState(studentName)
     const [address, setAddress] =  useState(studentAddress)
     const [guardian, setGuardian] = useState(studentGuardian)
     const [homeroom, setHomeroom] = useState(studentHr)
     const [phone, setPhone] = useState(studentPhone)
     const [transportation_id, setTransportation_id] = useState("")
-  
-    
-    const studentObj = students.map((student) => { return (
-        <option key={student.id} value={student.id}>{student.name}</option>
-    )})
 
     const transportationType = transportations.map((transportation) => {return (
     <option key={transportation.id} value={transportation.id}>{transportation.name}</option>
-)})
+    )})
 
 function handleStudentUpdate(e) {
     e.preventDefault()
@@ -45,14 +40,6 @@ function handleStudentUpdate(e) {
         <section>
             <form onSubmit={handleStudentUpdate}>
                 <label>Student </label>
-                <select 
-                    id="student.id"
-                    name="student.id"
-                    value={id}
-                    onChange={(e) => setId(e.target.value)}
-                    ><option value="0">Select a Student</option>
-                        {studentObj}
-                    </select> 
                     <label>Name: </label>
                     <input 
                         type="text"

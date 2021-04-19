@@ -2,7 +2,7 @@ import React from "react";
 import StudentCards from "./StudentCards";
 import Search from "./Search";
 
-function StudentsContainer({filteredStudents, handleStudentUpdateForm, students, transportations, handleSearch}) {
+function StudentsContainer({filteredStudents, handleStudentUpdateForm, students, transportations, handleSearch, search}) {
     
     const studentCards = filteredStudents.map((student) => {
 
@@ -21,6 +21,7 @@ function StudentsContainer({filteredStudents, handleStudentUpdateForm, students,
             hr={student.homeroom}
             id={student.id}
             handleSearch={handleSearch}
+            search={search}
             />
         )
     })
@@ -29,7 +30,7 @@ function StudentsContainer({filteredStudents, handleStudentUpdateForm, students,
     
     return (
         <div> 
-            <Search handleSearch={handleSearch}/> 
+            <Search handleSearch={handleSearch} search={search}/> 
               {studentCards}
         </div>
       

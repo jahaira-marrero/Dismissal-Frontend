@@ -14,7 +14,7 @@ function Transportation({name, students}) {
                 <Card>
                   <Card.Header>
                     <Accordion.Toggle as={Button} variant="link" eventKey="0">
-                        <h4>{student.name}</h4>
+                        <p>{student.name}</p>
                     </Accordion.Toggle>
                   </Card.Header>
                     <Accordion.Collapse eventKey="0">

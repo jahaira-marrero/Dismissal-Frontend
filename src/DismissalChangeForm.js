@@ -4,7 +4,7 @@ import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import { useHistory } from 'react-router-dom';
 
-function DismissalChangeForm({addDismissalChange, students, currentUser}) {
+function DismissalChangeForm({addDismissalChange, students, currentUser, handleUserModUpdate}) {
     const [date, setDate] = useState("")
     const [transportation_id, setTransportation_id] = useState([])
     const [user, setUser] = useState([])
@@ -43,6 +43,7 @@ const studentOptions = students?.map((student) => { return (
         .then((r) => r.json())
         .then((changeRequest) => {
             addDismissalChange(changeRequest);
+            handleUserModUpdate(changeRequest)
             history.push('/dismissalchangescontainer')
         });
     }

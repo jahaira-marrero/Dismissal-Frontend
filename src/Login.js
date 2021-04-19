@@ -33,7 +33,11 @@ function Login({setCurrentUser}) {
         body: JSON.stringify(newLogin)
     })
         .then(r => r.json())
-        .then(data => setCurrentUser(data))
+        .then(data => {
+            console.log(data)
+            setCurrentUser(data)
+        })
+
         history.push('/home')
     }
 const busPic = "https://brazilbustravel.com/blog/wp-content/uploads/2017/09/seat.png"

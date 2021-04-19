@@ -17,7 +17,7 @@ function App() {
   const [students, setStudents] = useState([])
   const [transportations, setTransportations] = useState([])
   const [modifications, setModifications] = useState([])
-  const [search, setSearch] = useState([])
+  const [search, setSearch] = useState("")
   const [currentUser, setCurrentUser] = useState(null)
 
 
@@ -58,7 +58,6 @@ function handleStudentUpdateForm(updatedStudentInfo) {
   const transAnswer = [...updatedTransportation, updatedStudentInfo.transportation]
   setStudents(answer)
   setTransportations(transAnswer)
-
 }
 
 const filteredStudents = students.filter(student => {
@@ -73,13 +72,25 @@ function handleDeleteDismissalChange(id) {
     setModifications(deleteDismissalChange)
 }
 
-function handleSearch(newSearch) {
-  setSearch(newSearch);
+function handleUserModUpdate(newModification) {
+  let updatedMods=currentUser.modifications
+    updatedMods = [...updatedMods, newModification]
+    let updateUser=currentUser
+    updateUser.modifications=updatedMods
+    setCurrentUser(updateUser)
 }
+
+function handleSearch(newSearch) {
+ setSearch(newSearch)
+}
+
+
+
+
 
   return (
     <div className="App" >
-       {currentUser ? <NavBar /> : null} 
+       {currentUser ? <NavBar handleSearch={handleSearch}/> : null} 
       <Switch>
 
       <Route exact path="/login">
@@ -95,7 +106,7 @@ function handleSearch(newSearch) {
       </Route>
 
       <Route exact path="/dismissalchangeform">
-          <DismissalChangeForm currentUser={currentUser} addDismissalChange={handleAddDismissalChange} students={students}/>
+          <DismissalChangeForm handleUserModUpdate={handleUserModUpdate} currentUser={currentUser} addDismissalChange={handleAddDismissalChange} students={students}/>
       </Route>
 
       <Route exact path="/dismissalchangescontainer">
@@ -111,7 +122,7 @@ function handleSearch(newSearch) {
       </Route>
 
       <Route exact path="/students">
-        <StudentsContainer handleSearch={handleSearch} students={students} filteredStudents={filteredStudents} handleStudentUpdateForm={handleStudentUpdateForm} transportations={transportations} />
+        <StudentsContainer  handleSearch={handleSearch} search={search} students={students} filteredStudents={filteredStudents} handleStudentUpdateForm={handleStudentUpdateForm} transportations={transportations} />
       </Route>
 
       <Route exact path="/transportations">
