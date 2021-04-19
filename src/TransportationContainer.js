@@ -3,13 +3,12 @@ import Transportation from "./Transportation"
 
 function TransportationContainer({transportations}) {
     const transportMethods = transportations.map((transportation) => { 
-      
+
         return (
             <Transportation
             key={transportation.id}
             name={transportation.name}
-            students={transportation.students.map((student) => {return(student)})}
-           
+            students={transportation.students.map((student) => {return(student)})}      
             />
         )
     })
@@ -17,9 +16,8 @@ function TransportationContainer({transportations}) {
     return (
         <div>
             <h1 style={{color: "black"}}>Transportation Rosters</h1>
-        
-               {transportMethods}
-         </div>
+                {transportMethods}
+        </div>
         )
 }
 export default TransportationContainer;
