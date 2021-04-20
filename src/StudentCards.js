@@ -32,11 +32,11 @@ function StudentCards({id, name,hr, address, guardian, phone, transportation, mo
        
     return (
         <div  id={id} 
-        style={{width: "1150px", content: "center"}}
+        style={{width: "1400px", content: "center"}}
         >  
             <br></br>
             <br></br>
-            <Card style={{borderColor: "blue", border: "3px", baorderRadius: "3.25rem", background: "white"}} >
+            <Card style={{borderColor: "blue", border: "3px", boarderRadius: "3.25rem", background: "white"}} >
                     <Card.Body id={id} style={{content: "center"}}>
                     <Card.Title >{name}</Card.Title>
                     <Card.Subtitle className="mb-2 text-muted" style={{content: "center"}}>Transportation: {transportation}</Card.Subtitle>

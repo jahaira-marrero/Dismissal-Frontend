@@ -42,6 +42,7 @@ const studentOptions = students?.map((student) => { return (
     })
         .then((r) => r.json())
         .then((changeRequest) => {
+            console.log(changeRequest)
             addDismissalChange(changeRequest);
             handleUserModUpdate(changeRequest)
             history.push('/dismissalchangescontainer')

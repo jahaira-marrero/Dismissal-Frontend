@@ -1,5 +1,7 @@
 import React, {useState} from "react";
 import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import Col from 'react-bootstrap/Col';
 
 function StudentUpdateForm({handleStudentUpdateForm, transportations, studentId, studentName, studentAddress, studentGuardian,studentHr, studentPhone}) {
     const [id, setId] = useState(studentId)
@@ -34,65 +36,79 @@ function handleStudentUpdate(e) {
         .then((updatedStudentInfo) => handleStudentUpdateForm(updatedStudentInfo));
        
 }
-
     return (
         <div style={{background: "#a3c8e4e6"}}><h3>Student Update Form</h3>
-        <section>
-            <form onSubmit={handleStudentUpdate}>
-                <label>Student </label>
-                    <label>Name: </label>
-                    <input 
-                        type="text"
-                        id="name"
-                        name="name"
-                        value={name}
-                        onChange={(e) => setName(e.target.value)}
-                    />
-                     <label>Address: </label>
-                    <input 
-                        type="text"
-                        id="address"
-                        name="address"
-                        value={address}
-                        onChange={(e) => setAddress(e.target.value)}
-                    />
-                     <label>Guardian: </label>
-                    <input 
-                        type="text"
-                        id="guardian"
-                        name="guardian"
-                        value={guardian}
-                        onChange={(e) => setGuardian(e.target.value)}
-                    />
-                     <label>Phone: </label>
-                    <input 
-                        type="text"
-                        id="phone"
-                        name="phone"
-                        value={phone}
-                        onChange={(e) => setPhone(e.target.value)}
-                    />
-                     <label>Homeroom: </label>
-                    <input 
-                        type="text"
-                        id="homeroom"
-                        name="homeroom"
-                        value={homeroom}
-                        onChange={(e) => setHomeroom(e.target.value)}
-                    />
-                    <label>Transportation</label>
-                    <select
-                    id="transportation.id"
-                    name="transportation.id"
-                    value={transportation_id}
-                    onChange={(e) => setTransportation_id(e.target.value)}
-                    >
-                        <option value="0">Select a Transportation</option>
-                        {transportationType}
-                    </select>
-                <Button size="sm" type="submit">Update Information</Button>
-            </form>
-        </section>
+        <Form onSubmit={handleStudentUpdate} style={{ width: "50%"}}>
+        <Form.Row>
+            <Form.Group as={Col} controlId="formGridEmail">
+            <Form.Label>Student Name</Form.Label>
+            <Form.Control 
+                type="text"
+                id="name"
+                name="name"
+                value={name}
+                onChange={(e) => setName(e.target.value)} />
+            </Form.Group>
+        </Form.Row>
+        <Form.Group controlId="formGridAddress2">
+            <Form.Label>Address</Form.Label>
+            <Form.Control 
+              type="text"
+              id="address"
+              name="address"
+              value={address}
+              onChange={(e) => setAddress(e.target.value)} />
+        </Form.Group>
+        <Form.Row>
+        <Form.Group as={Col} controlId="formGuardian">
+            <Form.Label>Guardian</Form.Label>
+            <Form.Control 
+                 type="text"
+                 id="guardian"
+                 name="guardian"
+                 value={guardian}
+                 onChange={(e) => setGuardian(e.target.value)} />
+            </Form.Group>  
+            <Form.Group as={Col} controlId="formGuardian">
+            <Form.Label>Phone Number</Form.Label>
+            <Form.Control 
+                 type="text"
+                 id="phone"
+                 name="phone"
+                 value={phone}
+                 onChange={(e) => setPhone(e.target.value)} />
+            </Form.Group>
+        </Form.Row>
+        <Form.Group as={Col} controlId="formGridState">
+            <Form.Label>Homeroom</Form.Label>
+            <Form.Control as="select" 
+                type="text"
+                id="homeroom"
+                name="homeroom"
+                value={homeroom}
+                onChange={(e) => setHomeroom(e.target.value)}>
+                <option value="0">Select Homeroom</option>
+                <option value="1">Nerds of a Feather</option>
+                <option value="2">The Brainy Bunch</option>
+                <option value="3">Divide and Conquerors</option>
+                <option value="4">The Clever Compound</option>
+                <option value="5">The Mighty Chondria</option>
+            </Form.Control>
+            </Form.Group>
+            <Form.Group as={Col} controlId="formGridState">
+            <Form.Label>Transportation</Form.Label>
+            <Form.Control as="select" 
+                defaultValue="Choose..."
+                id="transportation.id"
+                name="transportation.id"
+                value={transportationType}
+                onChange={(e) => setTransportation_id(e.target.value)}>
+                <option value="0">Select a Transportation</option>
+                {transportationType}   
+            </Form.Control>
+            </Form.Group>
+            <Button size="sm" type="submit">Update Information</Button>
+        </Form>
         </div>
     )
 }

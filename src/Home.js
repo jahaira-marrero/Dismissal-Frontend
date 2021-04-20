@@ -22,14 +22,14 @@ return (
             backgroundSize: "cover",
           }}
         > 
-        <h2 style={{color: "white", fontSize: "5rem"}}>Welcome {currentUser?.name}</h2>
+        <h2 style={{color: "white",lineHeight: "3", fontSize: "5rem"}}>Welcome {currentUser?.name}</h2>
         <section style={{marginTop: "3%",
             width: "125%"}}>
       <Container>
         <Row sm>
             <Col sm={4}>
             <Card style={{ width: '18rem', background: "white" }}>
-                <Card.Body>
+                <Card.Body >
                     <Card.Title>Dismissal Changes</Card.Title>
                     <Card.Subtitle className="mb-2 text-muted">Check Daily by 3pm</Card.Subtitle>
                     <Card.Text>
@@ -59,8 +59,8 @@ return (
         <Row sm>
             <Col sm={4}>
             <Figure>
-            <Card style={{ width: '18rem', background: "white" }}>
-                <Card.Body>
+            <Card style={{ width: '18rem', background: "white", justifyContent:"left" }}>
+                <Card.Body style={{ content: "center"}}>
                     <Card.Title>All Students</Card.Title>
                     <Card.Subtitle className="mb-2 text-muted">Student Information Cards</Card.Subtitle>
                     <Card.Text>

@@ -5,7 +5,7 @@ import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 
 function Transportation({name, students}) {
-
+console.log(students)
   const studentArray=students.map((student) => (
         <tbody>
           <tr>
@@ -14,7 +14,7 @@ function Transportation({name, students}) {
                 <Card>
                   <Card.Header>
                     <Accordion.Toggle as={Button} variant="link" eventKey="0">
-                        <p>{student.name}</p>
+                        <p><h4>{student.name}</h4></p>
                     </Accordion.Toggle>
                   </Card.Header>
                     <Accordion.Collapse eventKey="0">

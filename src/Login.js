@@ -51,12 +51,12 @@ const busPic = "https://brazilbustravel.com/blog/wp-content/uploads/2017/09/seat
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
           }}>
-            <h1  style={{color: "white",  display: "flex",lineHeight: "4", fontSize: "6rem", justifyContent: "center", height: "10vh"}}>
+            <h1  style={{color: "white",  display: "flex",lineHeight: "6", fontSize: "6rem", justifyContent: "center", height: "10vh"}}>
                 Dismissal Made Easy </h1>
             <section  style={{color: "white",  display: "flex", justifyContent: "center"}}>
       
-            <h3 style={{color: "white", margin: "25px", marginTop: "200px", justifyContent: "center"}}>Log In  </h3>
-            <Form  onSubmit={handleSubmit} style={{marginTop: "200px"}} >
+            <h3 style={{color: "white", margin: "25px", marginTop: "270px", justifyContent: "center"}}>Log In  </h3>
+            <Form  onSubmit={handleSubmit} style={{marginTop: "270px"}} >
             <Form.Row>
         
             <Col xs={3}>
