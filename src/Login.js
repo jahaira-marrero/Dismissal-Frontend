@@ -65,7 +65,6 @@ const busPic = "https://brazilbustravel.com/blog/wp-content/uploads/2017/09/seat
             name="username"
             value={username}
             onChange={changeUsername}>
-            {/* <Form.Label>Username</Form.Label> */}
             <Form.Control size="sm" type="text" placeholder="username" />
             </Form.Group>
             </Col>
@@ -76,7 +75,6 @@ const busPic = "https://brazilbustravel.com/blog/wp-content/uploads/2017/09/seat
             name="passworde"
             value={password}
             onChange={changePassword}>
-            {/* <Form.Label>Password</Form.Label> */}
             <Form.Control size="sm" type="text" placeholder="password" />
             </Form.Group>
             </Col>

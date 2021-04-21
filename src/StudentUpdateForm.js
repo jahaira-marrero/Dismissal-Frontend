@@ -90,11 +90,11 @@ function handleStudentUpdate(e) {
                 value={homeroom}
                 onChange={(e) => setHomeroom(e.target.value)}>
                 <option value="0">Select Homeroom</option>
-                <option value="1">Nerds of a Feather</option>
-                <option value="2">The Brainy Bunch</option>
-                <option value="3">Divide and Conquerors</option>
-                <option value="4">The Clever Compound</option>
-                <option value="5">The Mighty Chondria</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
             </Form.Control>
             </Form.Group>
             <Form.Group as={Col} controlId="formGridState">
