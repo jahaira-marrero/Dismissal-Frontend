@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import StudentDismissalDetails from "./StudentDismissalDetails";
 import StudentUpdateForm from "./StudentUpdateForm";
 import Button from 'react-bootstrap/Button';
-// import CardDeck from 'react-bootstrap/CardDeck';
+import CardDeck from 'react-bootstrap/CardDeck';
 import Card from 'react-bootstrap/Card';
 
 function StudentCards({id, name,hr, address, guardian, phone, transportation, modifications, handleStudentUpdateForm, students, transForm, handleSearch}) {
@@ -32,7 +32,7 @@ function StudentCards({id, name,hr, address, guardian, phone, transportation, mo
        
     return (
         <div  id={id} 
-        style={{width: "1400px", justufyContent: "center"}}
+        style={{width: "1400px", justifyContent: "center"}}
         >  
             <br></br>
             <br></br>
@@ -61,9 +61,17 @@ function StudentCards({id, name,hr, address, guardian, phone, transportation, mo
                       students={students} 
                       transportations={transForm} /> : null}
                     <Button size="sm" onClick={handleClick}> See Prior Changes</Button>
-                      {showDetails ?  <p>{dismissalModification}</p> : null }
-                </Card.Body> 
-                </Card>
+                      {showDetails ?  <p>
+                        <CardDeck 
+                        style={{
+                            display: "grid",
+                            gridTemplateColumns: "350px 350px 350px 350px",
+                            margin: "15px 15px 15px 15px"}}>
+                            {dismissalModification}
+                        </CardDeck>
+                        </p> : null }
+                    </Card.Body> 
+                    </Card>
              
         </div>
     )

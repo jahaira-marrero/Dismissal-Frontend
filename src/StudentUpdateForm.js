@@ -37,7 +37,7 @@ function handleStudentUpdate(e) {
        
 }
     return (
-        <div style={{background: "#a3c8e4e6", width: "40%", justifyContent: "center"}}><h3>Student Update Form</h3>
+        <div style={{position: "relative", left: "415px", marginTop: "20px", background: "#a3c8e4e6", width: "40%", justifyContent: "center"}}><h3>Student Update Form</h3>
             
         
         <Form onSubmit={handleStudentUpdate}>

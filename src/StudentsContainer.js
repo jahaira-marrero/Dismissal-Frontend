@@ -31,6 +31,8 @@ function StudentsContainer({filteredStudents, handleStudentUpdateForm, students,
     return (
         <div> 
             <Search handleSearch={handleSearch} search={search}/> 
+
+            
               {studentCards}
         </div>
       

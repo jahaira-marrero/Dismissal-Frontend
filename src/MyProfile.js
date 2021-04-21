@@ -1,5 +1,6 @@
 import React from "react";
 import MyProfileMods from "./MyProfileMods";
+import CardDeck from 'react-bootstrap/CardDeck';
 
 
 function MyProfile({user}) {
@@ -21,7 +22,12 @@ console.log(user)
             <h2>{user.role}</h2>
             <p>{user.username}</p>
             <h3> My Dismissal Change History</h3>
+        <CardDeck style={{
+          display: "grid",
+          gridTemplateColumns: "350px 350px 350px 350px",
+          margin: "15px 15px 15px 15px"}}>
             {modifications}
+        </CardDeck>
         </div>
     )
 }
