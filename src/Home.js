@@ -22,7 +22,7 @@ return (
             backgroundSize: "cover",
           }}
         > 
-        <h2 style={{color: "white",lineHeight: "3", fontSize: "5rem"}}>Welcome {currentUser?.name}</h2>
+        <h2 style={{color: "white",lineHeight: "2", fontSize: "5rem"}}>Welcome {currentUser?.name}</h2>
         <section style={{marginTop: "3%",
             width: "125%"}}>
       <Container>
