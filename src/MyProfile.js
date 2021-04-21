@@ -1,6 +1,7 @@
 import React from "react";
 import MyProfileMods from "./MyProfileMods";
 
+
 function MyProfile({user}) {
 
    const modifications = user.modifications.map((mods) => {

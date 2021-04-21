@@ -11,7 +11,7 @@ console.log(students)
           <tr>
             <td>
               <Accordion>
-                <Card>
+                <Card >
                   <Card.Header>
                     <Accordion.Toggle as={Button} variant="link" eventKey="0">
                         <p><h4>{student.name}</h4></p>

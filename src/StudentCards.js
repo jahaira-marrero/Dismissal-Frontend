@@ -32,7 +32,7 @@ function StudentCards({id, name,hr, address, guardian, phone, transportation, mo
        
     return (
         <div  id={id} 
-        style={{width: "1400px", content: "center"}}
+        style={{width: "1400px", justufyContent: "center"}}
         >  
             <br></br>
             <br></br>

@@ -19,7 +19,6 @@
 }
 
 .Search-bar {
-  
   width: 500px;
   .input{
     border-radius: 250px;
@@ -33,6 +32,8 @@
     align-items: center;
     height:100vh;  
 }
+
+
 
 /* .login-font {
   colorwhite;

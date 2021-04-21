@@ -37,12 +37,14 @@ function handleStudentUpdate(e) {
        
 }
     return (
-        <div style={{background: "#a3c8e4e6"}}><h3>Student Update Form</h3>
-        <Form onSubmit={handleStudentUpdate} style={{ width: "50%"}}>
+        <div style={{background: "#a3c8e4e6", width: "40%", justifyContent: "center"}}><h3>Student Update Form</h3>
+            
+        
+        <Form onSubmit={handleStudentUpdate}>
         <Form.Row>
-            <Form.Group as={Col} controlId="formGridEmail">
+            <Form.Group as={Col}  controlId="formGridEmail">
             <Form.Label>Student Name</Form.Label>
-            <Form.Control 
+            <Form.Control  
                 type="text"
                 id="name"
                 name="name"

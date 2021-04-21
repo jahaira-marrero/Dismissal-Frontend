@@ -28,6 +28,7 @@ return (
       <Container>
         <Row sm>
             <Col sm={4}>
+                <Figure>
             <Card style={{ width: '18rem', background: "white" }}>
                 <Card.Body >
                     <Card.Title>Dismissal Changes</Card.Title>
@@ -39,6 +40,7 @@ return (
                     <Card.Link href="#"></Card.Link>
                 </Card.Body>
                 </Card>
+                </Figure>
             </Col>
             <Col sm={4}>
             <Figure>
