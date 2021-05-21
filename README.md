@@ -1,4 +1,18 @@
-# Getting Started with Create React App
+# Dismissal Made Easy
+
+** Version 1.0.0**
+
+This app allows teachers and administrators to input a dismissal change on behalf of a parent. Users can see prior changes in their profile, see other changes inputted by other users and delete changes. A user can also update student information and see the sorted transportation list by route.
+- - -
+
+## License & Copyright
+© Jahaira Marrero, Flatiron School
+
+
+
+
+
+<!-- # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -67,4 +81,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 ### `yarn build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify) -->
