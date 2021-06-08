@@ -9,10 +9,6 @@ function NavBar({setCurrentUser, handleSearch}) {
         setCurrentUser(null);
     }
 
-    // function resetFilter() {
-    //     handleSearch("")
-    // }
-
     return (
         <header style={{background: "#212529", height: "3rem", justifyContent: "center", lineHeight: "4"}}>
             <NavLink to="/home">
