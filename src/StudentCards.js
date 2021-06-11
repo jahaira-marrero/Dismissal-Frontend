@@ -10,7 +10,6 @@ function StudentCards({id, name,hr, address, guardian, phone, transportation, mo
     const [showUpdateForm, setShowUpdateForm] = useState(false)
 
     const dismissalModification = modifications.map((modification) => {
-
         return (
             <StudentDismissalDetails  
             key={modification.id}
@@ -19,7 +18,7 @@ function StudentCards({id, name,hr, address, guardian, phone, transportation, mo
             transUser={modification.user.name}
             transName={modification.transportation.name}
             />
-        )
+            )
         })
 
         function handleUpdateClick() {

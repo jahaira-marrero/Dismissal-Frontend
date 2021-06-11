@@ -9,7 +9,6 @@ function Login({setCurrentUser}) {
     const [password, setPassword] = useState("")
     const history = useHistory()
    
-
     function changeUsername(e) {
         setUsername(e.target.value)
     }

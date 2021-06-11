@@ -2,11 +2,9 @@ import React from "react";
 import MyProfileMods from "./MyProfileMods";
 import CardDeck from 'react-bootstrap/CardDeck';
 
-
 function MyProfile({user}) {
 
    const modifications = user.modifications.map((mods) => {
-console.log(user)
     return (
         <MyProfileMods
         key={mods.id}

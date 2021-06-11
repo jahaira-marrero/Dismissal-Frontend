@@ -5,7 +5,6 @@ import Search from "./Search";
 function StudentsContainer({filteredStudents, handleStudentUpdateForm, students, transportations, handleSearch, search}) {
     
     const studentCards = filteredStudents.map((student) => {
-
         return (
             <StudentCards
             key={student.id}
@@ -26,13 +25,9 @@ function StudentsContainer({filteredStudents, handleStudentUpdateForm, students,
         )
     })
 
-
-    
     return (
         <div> 
             <Search handleSearch={handleSearch} search={search}/> 
-
-            
               {studentCards}
         </div>
       

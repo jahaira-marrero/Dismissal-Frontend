@@ -1,6 +1,5 @@
 import React from "react";
 
-
 function Search({handleSearch, search}) {
 
   function handleSubmit(e) {

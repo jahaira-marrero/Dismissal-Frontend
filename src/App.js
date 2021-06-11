@@ -45,7 +45,6 @@ useEffect(() => {
 })
 },[]);
 
-
 function handleAddDismissalChange(newDismissalChange) {
   const newDismissalChanges = [...modifications, newDismissalChange];
   setModifications(newDismissalChanges)
@@ -83,10 +82,6 @@ function handleUserModUpdate(newModification) {
 function handleSearch(newSearch) {
  setSearch(newSearch)
 }
-
-
-
-
 
   return (
     <div className="App" >
